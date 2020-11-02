@@ -14,7 +14,14 @@
 		860B0F72254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 860B0F70254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld */; };
 		860B0F74254E580000D427C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860B0F73254E580000D427C1 /* Assets.xcassets */; };
 		860B0F77254E580000D427C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860B0F75254E580000D427C1 /* LaunchScreen.storyboard */; };
-		860B0F80254E5C0D00D427C1 /* gittest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B0F7F254E5C0D00D427C1 /* gittest.swift */; };
+		868CA13D255014DC0053E1B4 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA13C255014DC0053E1B4 /* MovieDetailViewController.swift */; };
+		868CA14025501B9A0053E1B4 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */; };
+		868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */; };
+		868CA1472550204C0053E1B4 /* MovieSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */; };
+		868CA14A2550228B0053E1B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1492550228B0053E1B4 /* HomeViewController.swift */; };
+		868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */; };
+		868CA150255024990053E1B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14F255024990053E1B4 /* MapViewController.swift */; };
+		868CA1532550263B0053E1B4 /* MyFavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +34,14 @@
 		860B0F73254E580000D427C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		860B0F76254E580000D427C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		860B0F78254E580000D427C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		860B0F7F254E5C0D00D427C1 /* gittest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gittest.swift; sourceTree = "<group>"; };
+		868CA13C255014DC0053E1B4 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
+		868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTableViewController.swift; sourceTree = "<group>"; };
+		868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewController.swift; sourceTree = "<group>"; };
+		868CA1492550228B0053E1B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaDetailViewController.swift; sourceTree = "<group>"; };
+		868CA14F255024990053E1B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +82,14 @@
 				860B0F75254E580000D427C1 /* LaunchScreen.storyboard */,
 				860B0F78254E580000D427C1 /* Info.plist */,
 				860B0F70254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld */,
-				860B0F7F254E5C0D00D427C1 /* gittest.swift */,
+				868CA13C255014DC0053E1B4 /* MovieDetailViewController.swift */,
+				868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */,
+				868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */,
+				868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */,
+				868CA1492550228B0053E1B4 /* HomeViewController.swift */,
+				868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */,
+				868CA14F255024990053E1B4 /* MapViewController.swift */,
+				868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */,
 			);
 			path = FIT5140Ass3;
 			sourceTree = "<group>";
@@ -146,10 +167,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868CA150255024990053E1B4 /* MapViewController.swift in Sources */,
+				868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */,
 				860B0F6C254E57FE00D427C1 /* ViewController.swift in Sources */,
-				860B0F80254E5C0D00D427C1 /* gittest.swift in Sources */,
 				860B0F68254E57FE00D427C1 /* AppDelegate.swift in Sources */,
+				868CA14025501B9A0053E1B4 /* MyFavouriteViewController.swift in Sources */,
+				868CA1532550263B0053E1B4 /* MyFavouriteTableViewController.swift in Sources */,
 				860B0F6A254E57FE00D427C1 /* SceneDelegate.swift in Sources */,
+				868CA1472550204C0053E1B4 /* MovieSearchTableViewController.swift in Sources */,
+				868CA14A2550228B0053E1B4 /* HomeViewController.swift in Sources */,
+				868CA13D255014DC0053E1B4 /* MovieDetailViewController.swift in Sources */,
+				868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */,
 				860B0F72254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
