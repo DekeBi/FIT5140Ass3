@@ -68,12 +68,14 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         let cinemaData = newCinemas[indexPath.row]
                 
         //convert cinemaData to cinema
-        let id = cinemaData.id!
+        let id = ""
+        let cinema_id = cinemaData.cinema_id!
         let name = cinemaData.name!
         let address = cinemaData.address!
+        let city = cinemaData.city!
         
-        let inStr = String(id)
-        let _ = databaseController?.addCinema(id:inStr, name:name, address:address)
+        let inStr = String(cinema_id)
+        let _ = databaseController?.addCinema(id:id, cinema_id:inStr, name:name, address:address, city:city)
         navigationController?.popViewController(animated: true)
     }
 
@@ -87,7 +89,7 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         newCinemas.removeAll()
         tableView.reloadData()
 
-        //强行停止正在进行中的任务,避免上次未结束任务仍在后台运行
+        
         URLSession.shared.invalidateAndCancel()
 
         currentRequestPage = 0

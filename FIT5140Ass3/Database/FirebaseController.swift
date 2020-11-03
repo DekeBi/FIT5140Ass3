@@ -69,7 +69,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return;
             }
             
-            cinema.id = cinemaId
+            cinema.cinema_id = cinemaId
             if change.type == .added{
                 cinemaList.append(cinema)
             }
@@ -100,18 +100,20 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func getCinemaByID(_ id: String) -> Cinema? {
         for cinema in cinemaList {
-            if cinema.id == id {
+            if cinema.cinema_id == id {
                 return cinema
             }
         }
         return nil
     }
     
-    func addCinema(id: String, name: String, address: String) -> Cinema {
+    func addCinema(id: String, cinema_id: String, name: String, address: String, city: String) -> Cinema {
         let cinema = Cinema()
         cinema.id = id
+        cinema.cinema_id = cinema_id
         cinema.name = name
         cinema.address = address
+        cinema.city = city
 
         do {
             if let cinemaRef = try cinemaRef?.addDocument(from: cinema) {
@@ -140,7 +142,5 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func cleanup() {
         
     }
-    
-
 }
 

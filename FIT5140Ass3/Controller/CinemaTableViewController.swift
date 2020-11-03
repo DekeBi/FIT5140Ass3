@@ -87,19 +87,19 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedCinema = allCinemas[indexPath.row]
-//        performSegue(withIdentifier: "cinemaDetailSegue", sender: selectedCinema)
-//    }
-//
-//    // MARK: - Segue Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "cardDetailSegue"{
-//            let destination = segue.destination as! CinemaDetailViewController
-//            destination.selectedCinema = sender as? Cinema
-//        }
-//    }
-//
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCinema = allCinemas[indexPath.row]
+        performSegue(withIdentifier: "showCinemaDetail", sender: selectedCinema)
+    }
+
+    // MARK: - Segue Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCinemaDetail"{
+            let destination = segue.destination as! CinemaDetailViewController
+            destination.selectedCinema = sender as? Cinema
+        }
+    }
+
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
         allCinemas = cinemaList
         updateSearchResults(for: navigationItem.searchController!)

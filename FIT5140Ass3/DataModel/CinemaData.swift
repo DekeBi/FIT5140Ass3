@@ -9,21 +9,25 @@
 import Foundation
 
 class CinemaData: NSObject, Decodable {
-    var id: Int?
+    
+    var cinema_id: Int?
     var name: String?
     var address: String?
+    var city: String?
     
     private enum RootKeys: String, CodingKey {
-        case id = "cinema_id"
+        case cinema_id
         case name = "cinema_name"
         case address
+        case city
     }
     
     required init(from decoder: Decoder) throws {
         let cinemaContainer = try decoder.container(keyedBy: RootKeys.self)
-        id = try? cinemaContainer.decode(Int.self, forKey: .id)
+        cinema_id = try? cinemaContainer.decode(Int.self, forKey: .cinema_id)
         name = try? cinemaContainer.decode(String.self, forKey: .name)
         address = try? cinemaContainer.decode(String.self, forKey: .address)
+        city = try? cinemaContainer.decode(String.self, forKey: .city)
     }
 
 }

@@ -174,10 +174,6 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Wg2-VN-jck" id="Fes-7t-e9e"/>
-                            <outlet property="delegate" destination="Wg2-VN-jck" id="qCn-uL-X7H"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cinema" id="bat-e7-IjY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O6I-9G-roL">
@@ -187,12 +183,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="wWJ-9c-1eo" kind="show" identifier="showCinemaDetail" id="cp7-qF-5lb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8p-cZ-WcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4039" y="1033"/>
         </scene>
-        <!--Cinema Detail View Controller-->
+        <!--Cinema detail-->
         <scene sceneID="jQ0-vE-8VO">
             <objects>
                 <viewController storyboardIdentifier="cinemaDetail" id="wWJ-9c-1eo" customClass="CinemaDetailViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,25 +199,132 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDT-1J-1Xk">
-                                <rect key="frame" x="79" y="407" width="257" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Check Cinema Location">
-                                    <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGT-0R-G5u">
+                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cinema Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inj-xr-5LJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEm-6n-dbF">
+                                        <rect key="frame" x="332" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmA-v4-JsE">
+                                <rect key="frame" x="20" y="148.5" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cinema Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-AX-dPH">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0Y-hZ-CjQ">
+                                        <rect key="frame" x="332" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT3-e9-rvU">
+                                <rect key="frame" x="20" y="189" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzn-ca-vNE">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-6d-HnB">
+                                        <rect key="frame" x="332" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PC-e3-DV8">
+                                <rect key="frame" x="20" y="229.5" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3l-zI-vep">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-Vo-3yS">
+                                        <rect key="frame" x="332" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q1-Vg-0iV">
+                                <rect key="frame" x="20" y="270" width="374" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="View in map">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="mapButton:" destination="wWJ-9c-1eo" eventType="touchUpInside" id="sAB-Ct-2jt"/>
-                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A9m-vY-faL">
+                                <rect key="frame" x="20" y="320" width="374" height="473"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filmCell" id="OoH-La-nhC">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OoH-La-nhC" id="mAP-xN-KUu">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Q1-Vg-0iV" firstAttribute="top" secondItem="1PC-e3-DV8" secondAttribute="bottom" constant="20" id="1T3-1j-suo"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="qGT-0R-G5u" secondAttribute="trailing" constant="20" id="5eR-CF-1L9"/>
+                            <constraint firstItem="WmA-v4-JsE" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="BMu-TM-JAY"/>
+                            <constraint firstItem="1PC-e3-DV8" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="NQV-2C-t2V"/>
+                            <constraint firstItem="5Q1-Vg-0iV" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="O3G-gw-agn"/>
+                            <constraint firstItem="qGT-0R-G5u" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="Ppz-eg-Jpf"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="QT3-e9-rvU" secondAttribute="trailing" constant="20" id="ReL-Ja-oL0"/>
+                            <constraint firstItem="qGT-0R-G5u" firstAttribute="top" secondItem="NKi-lc-U8h" secondAttribute="top" constant="20" id="TaR-0d-fXd"/>
+                            <constraint firstItem="1PC-e3-DV8" firstAttribute="top" secondItem="QT3-e9-rvU" secondAttribute="bottom" constant="20" id="VPz-IE-5wK"/>
+                            <constraint firstItem="WmA-v4-JsE" firstAttribute="top" secondItem="qGT-0R-G5u" secondAttribute="bottom" constant="20" id="XzH-o2-nE3"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="5Q1-Vg-0iV" secondAttribute="trailing" constant="20" id="a8D-oa-0lq"/>
+                            <constraint firstItem="A9m-vY-faL" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="aEk-a1-HgH"/>
+                            <constraint firstItem="QT3-e9-rvU" firstAttribute="top" secondItem="WmA-v4-JsE" secondAttribute="bottom" constant="20" id="bwm-G6-Wpr"/>
+                            <constraint firstItem="QT3-e9-rvU" firstAttribute="leading" secondItem="NKi-lc-U8h" secondAttribute="leading" constant="20" id="dlz-5g-im7"/>
+                            <constraint firstItem="A9m-vY-faL" firstAttribute="top" secondItem="5Q1-Vg-0iV" secondAttribute="bottom" constant="20" id="duV-De-jDJ"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="1PC-e3-DV8" secondAttribute="trailing" constant="20" id="fuO-dE-vye"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="bottom" secondItem="A9m-vY-faL" secondAttribute="bottom" constant="20" id="h2N-iS-bvP"/>
+                            <constraint firstItem="WmA-v4-JsE" firstAttribute="leading" secondItem="qGT-0R-G5u" secondAttribute="leading" id="pbr-fI-Jc0"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="A9m-vY-faL" secondAttribute="trailing" constant="20" id="rg2-eK-k8d"/>
+                            <constraint firstItem="NKi-lc-U8h" firstAttribute="trailing" secondItem="WmA-v4-JsE" secondAttribute="trailing" constant="20" id="xcg-qn-XcV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NKi-lc-U8h"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Cinema detail" id="Pza-eH-3we"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="J9t-6d-HnB" id="nGB-z6-sYM"/>
+                        <outlet property="cinemaIdLabel" destination="CEm-6n-dbF" id="wvz-3Q-19k"/>
+                        <outlet property="cinemaNameLabel" destination="w0Y-hZ-CjQ" id="Omp-y8-Jty"/>
+                        <outlet property="phoneLabel" destination="WhC-Vo-3yS" id="c7Y-So-PHD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgI-Fc-Fnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4039" y="1771"/>
+            <point key="canvasLocation" x="-4004.347826086957" y="1807.3660714285713"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="nhH-99-ph4">
