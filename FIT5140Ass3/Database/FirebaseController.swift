@@ -52,8 +52,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     // MARK:- Parse Functions for Firebase Firestore responses
     func parseCinemasSnapshot(snapshot: QuerySnapshot) {
-        snapshot.documentChanges.forEach{(change) in let cinemaId = change.document.documentID
-            print(cinemaId)
+        snapshot.documentChanges.forEach{(change) in let Id = change.document.documentID
+            print(Id)
             
             var parsedCinema: Cinema?
             
@@ -69,16 +69,16 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return;
             }
             
-            cinema.cinema_id = cinemaId
+            cinema.id = Id
             if change.type == .added{
                 cinemaList.append(cinema)
             }
             else if change.type == .modified {
-                let index = getCinemaIndexByID(cinemaId)!
+                let index = getCinemaIndexByID(Id)!
                 cinemaList[index] = cinema
             }
             else if change.type == .removed {
-                if let index = getCinemaIndexByID(cinemaId) {
+                if let index = getCinemaIndexByID(Id) {
                     cinemaList.remove(at: index)
                 }
             }
