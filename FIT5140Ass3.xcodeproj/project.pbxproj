@@ -21,6 +21,10 @@
 		868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */; };
 		868CA150255024990053E1B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14F255024990053E1B4 /* MapViewController.swift */; };
 		868CA1532550263B0053E1B4 /* MyFavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */; };
+		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
+		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
+		A42655232553110C0074B50D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42655222553110C0074B50D /* Film.swift */; };
+		A492A61B2552885A00530DAD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492A61A2552885A00530DAD /* utilities.swift */; };
 		A4ABBFDA255174A600F3EE71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */; };
 		A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */; };
 		A4ABBFE32551770400F3EE71 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFE22551770400F3EE71 /* DatabaseProtocol.swift */; };
@@ -51,6 +55,10 @@
 		868CA14F255024990053E1B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteTableViewController.swift; sourceTree = "<group>"; };
 		89ED3F0E4566F02F7F378884 /* Pods-FIT5140Ass3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.release.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.release.xcconfig"; sourceTree = "<group>"; };
+		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
+		A42655222553110C0074B50D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		A492A61A2552885A00530DAD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		A4ABBFE22551770400F3EE71 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 				860B0F78254E580000D427C1 /* Info.plist */,
 				A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */,
 				860B0F70254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld */,
+				A492A61A2552885A00530DAD /* utilities.swift */,
 			);
 			path = FIT5140Ass3;
 			sourceTree = "<group>";
@@ -133,6 +142,7 @@
 				A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */,
 				A4ABBFE22551770400F3EE71 /* DatabaseProtocol.swift */,
 				A4ABBFE42551772D00F3EE71 /* Cinema.swift */,
+				A42655222553110C0074B50D /* Film.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -169,6 +179,8 @@
 				868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */,
 				868CA1522550263B0053E1B4 /* MyFavouriteTableViewController.swift */,
 				A4ABBFE8255178EB00F3EE71 /* SearchCinemasTableViewController.swift */,
+				A426551E255301610074B50D /* DataCollectionViewCell.swift */,
+				A4265520255309E70074B50D /* FilmTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,9 +315,12 @@
 				A4ABBFE52551772D00F3EE71 /* Cinema.swift in Sources */,
 				A4ABBFEF25517BF600F3EE71 /* AddCinemaDelegate.swift in Sources */,
 				A4ABBFF125517C2200F3EE71 /* AppDelegate.swift in Sources */,
+				A42655232553110C0074B50D /* Film.swift in Sources */,
+				A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */,
 				A4ABBFED25517A1A00F3EE71 /* VolumeData.swift in Sources */,
 				A4ABBFE32551770400F3EE71 /* DatabaseProtocol.swift in Sources */,
 				A4ABBFE72551777300F3EE71 /* MulticastDelegate.swift in Sources */,
+				A492A61B2552885A00530DAD /* utilities.swift in Sources */,
 				A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */,
 				868CA150255024990053E1B4 /* MapViewController.swift in Sources */,
 				868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */,
@@ -318,6 +333,7 @@
 				868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */,
 				A4ABBFEB255179FD00F3EE71 /* CinemaData.swift in Sources */,
 				A4ABBFE9255178EC00F3EE71 /* SearchCinemasTableViewController.swift in Sources */,
+				A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */,
 				860B0F72254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

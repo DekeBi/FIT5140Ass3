@@ -72,7 +72,7 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allCinemas.count
+        return filteredCinemas.count
     }
 
     
@@ -80,7 +80,7 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_CINEMA, for: indexPath)
 
         // Configure the cell...
-        let cinema = allCinemas[indexPath.row]
+        let cinema = filteredCinemas[indexPath.row]
         cell.textLabel?.text = cinema.name
         cell.detailTextLabel?.text = cinema.address
         
@@ -88,7 +88,7 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCinema = allCinemas[indexPath.row]
+        let selectedCinema = filteredCinemas[indexPath.row]
         performSegue(withIdentifier: "showCinemaDetail", sender: selectedCinema)
     }
 
@@ -101,8 +101,28 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     }
 
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
+        
         allCinemas = cinemaList
         updateSearchResults(for: navigationItem.searchController!)
     }
-
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.databaseController?.deleteCinema(cinema: filteredCinemas[indexPath.row])
+        }
+    }
+    
+    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
+        // do nothing
+    }
+    
+    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
+        // do nothing
+    }
+    
 }

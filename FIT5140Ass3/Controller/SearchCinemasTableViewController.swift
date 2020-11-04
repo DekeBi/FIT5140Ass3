@@ -11,10 +11,11 @@ import UIKit
 class SearchCinemasTableViewController: UITableViewController, UISearchBarDelegate {
     
     let CELL_CINEMA = "cinemaCell"
+    let GEOLOCATION = "-33.872889;151.206244"
     
     var indicator = UIActivityIndicatorView()
     var newCinemas = [CinemaData]()
-    //var newCinemas2 = [Cinema]()
+    
     weak var databaseController: DatabaseProtocol?
     
     let MAX_REQUESTS = 10
@@ -103,11 +104,11 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         var searchURLComponentrs = URLComponents()
         searchURLComponentrs.scheme = "https"
         searchURLComponentrs.host = "api-gate2.movieglu.com"
-        searchURLComponentrs.path = "/cinemasNearby/"
+        searchURLComponentrs.path = "/cinemaLiveSearch/"
             
-        let headers = ["client":"PERS_77","x-api-key":"tcGhu0dS0c7S7h5xaG7lAa5R2rgWuD7M27oqsRLy", "Authorization":"Basic UEVSU183NzppWmwyd0o3WGlrOVM=","territory":"AU","api-version":"v200","geolocation":"-37.882790;145.051080","device-datetime":"2020-11-03T08:45:24.353Z"]
+        let headers = ["client":"PERS_77","x-api-key":"j8WskErfCq348pPp6bNd7auiIsaE3L3d3lOHOYjA", "Authorization":"Basic UEVSU183N19YWDpXaFVuRTZpVnlQSWw=","territory":"XX","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
             
-        searchURLComponentrs.queryItems = [ URLQueryItem(name: "n", value: "2")]
+        searchURLComponentrs.queryItems = [URLQueryItem(name: "n", value: "5"),URLQueryItem(name: "query", value: cinemaName)]
             
         var request = URLRequest(url: (searchURLComponentrs.url)!)
             request.httpMethod = "GET"

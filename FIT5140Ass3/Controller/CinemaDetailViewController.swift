@@ -24,7 +24,8 @@ class CinemaDetailViewController: UIViewController {
         cinemaNameLabel.text = selectedCinema?.name
         addressLabel.text = selectedCinema?.address
         phoneLabel.text = selectedCinema?.city
-        
     }
+    
+    
     
 }

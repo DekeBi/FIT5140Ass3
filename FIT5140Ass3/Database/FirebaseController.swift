@@ -18,13 +18,16 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var authController: Auth
     var database: Firestore
     var cinemaRef: CollectionReference?
+    var filmRef:CollectionReference?
     var cinemaList: [Cinema]
+    var filmList: [Film]
     
     override init() {
         FirebaseApp.configure()
         authController = Auth.auth()
         database = Firestore.firestore()
         cinemaList = [Cinema]()
+        filmList = [Film]()
         
         super.init()
         
@@ -46,6 +49,20 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             self.parseCinemasSnapshot(snapshot: querySnapshot)
+            //self.setUpFilmListener()
+        }
+    }
+    
+    func setUpFilmListener() {
+        filmRef = database.collection("films")
+        filmRef?.addSnapshotListener {
+            (querySnapshot, error) in guard let querySnapshot = querySnapshot
+                //let filmSnapshot = querySnapshot.document
+            else {
+                print("Error fetching documents:\(error!)")
+                return
+            }
+            self.parseFilmsSnapshot(snapshot: querySnapshot)
             
         }
     }
@@ -57,6 +74,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             
             var parsedCinema: Cinema?
             
+            //get cinemas
             do {
                 parsedCinema = try change.document.data(as: Cinema.self)
             } catch {
@@ -87,6 +105,47 @@ class FirebaseController: NSObject, DatabaseProtocol {
         listeners.invoke{ (listener) in
         if listener.listenerType == ListenerType.cinemas || listener.listenerType == ListenerType.all {
             listener.onCinemaListChange(change: .update, cinemaList: cinemaList)
+        }
+        }
+    }
+    
+    func parseFilmsSnapshot(snapshot: QuerySnapshot) {
+        snapshot.documentChanges.forEach{(change) in let Id = change.document.documentID
+            print(Id)
+            
+            var parsedFilm: Film?
+            
+            //get cinemas
+            do {
+                parsedFilm = try change.document.data(as: Film.self)
+            } catch {
+                print("Unable to decode cinema. Is the film malformed")
+                return
+            }
+            
+            guard let film = parsedFilm else {
+                print("Document doesn't exist")
+                return;
+            }
+            
+            film.id = Id
+            if change.type == .added{
+                filmList.append(film)
+            }
+//            else if change.type == .modified {
+//                let index = getCinemaIndexByID(Id)!
+//                filmList[index] = film
+//            }
+//            else if change.type == .removed {
+//                if let index = getFilmIndexByID(Id) {
+//                    filmList.remove(at: index)
+//                }
+//            }
+            
+        }
+        listeners.invoke{ (listener) in
+        if listener.listenerType == ListenerType.films || listener.listenerType == ListenerType.all {
+            listener.onFilmListChange(change: .update, filmList: filmList)
         }
         }
     }
@@ -126,6 +185,19 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return cinema
     }
     
+//    func addFilm(filmName: String) -> Film {
+//        // do something
+//        let film = Film()
+//        film.imdb_id = imdb_id
+//        film.film_name =
+//
+//    }
+    
+    func addCinemaToFilm(cinema: Cinema, film: Film) -> Bool {
+        // do something
+        return true
+    }
+    
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
         
@@ -133,14 +205,27 @@ class FirebaseController: NSObject, DatabaseProtocol {
         listener.listenerType == ListenerType.all {
             listener.onCinemaListChange(change: .update, cinemaList: cinemaList)
         }
+        
+        if listener.listenerType == ListenerType.films ||
+        listener.listenerType == ListenerType.all {
+            listener.onFilmListChange(change: .update, filmList: filmList)
+        }
+    }
+    
+    func deleteCinema(cinema: Cinema) {
+        if let cinemaID = cinema.id {
+            cinemaRef?.document(cinemaID).delete()
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
         listeners.removeDelegate(listener)
+        
     }
     
     func cleanup() {
         
     }
 }
+
 
