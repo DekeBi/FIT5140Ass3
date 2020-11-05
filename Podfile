@@ -11,4 +11,7 @@ target 'FIT5140Ass3' do
 	pod 'Firebase/Firestore'
 	pod 'FirebaseFirestoreSwift'
 
+	pod 'GooglePlaces'
+	pod 'GoogleMaps'
+
 end
