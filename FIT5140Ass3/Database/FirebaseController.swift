@@ -49,7 +49,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             self.parseCinemasSnapshot(snapshot: querySnapshot)
-            //self.setUpFilmListener()
+            self.setUpFilmListener()
         }
     }
     
@@ -132,19 +132,19 @@ class FirebaseController: NSObject, DatabaseProtocol {
             if change.type == .added{
                 filmList.append(film)
             }
-//            else if change.type == .modified {
+            else if change.type == .modified {
 //                let index = getCinemaIndexByID(Id)!
 //                filmList[index] = film
-//            }
-//            else if change.type == .removed {
+            }
+            else if change.type == .removed {
 //                if let index = getFilmIndexByID(Id) {
-//                    filmList.remove(at: index)
+ //                   filmList.remove(at: index)
 //                }
-//            }
+            }
             
         }
         listeners.invoke{ (listener) in
-        if listener.listenerType == ListenerType.films || listener.listenerType == ListenerType.all {
+            if listener.listenerType == ListenerType.films || listener.listenerType == ListenerType.all  {
             listener.onFilmListChange(change: .update, filmList: filmList)
         }
         }

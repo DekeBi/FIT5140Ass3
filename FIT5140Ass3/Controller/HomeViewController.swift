@@ -34,18 +34,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
         self.filmTableView.reloadData()
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        databaseController?.addListener(listener: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        databaseController?.addListener(listener: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,10 +58,44 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = filmTableView.dequeueReusableCell(withIdentifier: "filmCell", for: indexPath) as! FilmTableViewCell
         let film = allFilms[indexPath.row]
         cell.nameLabel.text = film.film_name
-        cell.despLabel.text = film.film_image
-        
+        cell.despLabel.text = film.film_desc
+        cell.img.image = UIImage(named:"mulan")?.reSizeImage(reSize: CGSize(width: 30, height: 50))
+        //downLoadImage(film : film)
         return cell
         
+    }
+    
+    func downLoadImage(film : Film) {
+         URLSession.shared.invalidateAndCancel()
+        let imgUrl = film.film_image
+        
+        let jsonURL = URL(string: imgUrl)
+        let task = URLSession.shared.dataTask(with: jsonURL!) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let uiImage = UIImage(data: data!){
+                DispatchQueue.main.async {
+                    //self.cardImage.image = uiImage
+                }
+            }
+        }
+        task.resume()
+
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedFilm = allFilms[indexPath.row]
+        performSegue(withIdentifier: "showFilmDetail", sender: selectedFilm)
+    }
+
+    // MARK: - Segue Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFilmDetail"{
+            //let destination = segue.destination as! MovieDetailViewController
+            //destination.selectedFilm = sender as? Film
+        }
     }
     
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
@@ -68,6 +104,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
         allFilms = filmList
+        self.filmTableView.reloadData()
     }
     
     func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
