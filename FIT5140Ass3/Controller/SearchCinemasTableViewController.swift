@@ -116,7 +116,7 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
             
         var request = URLRequest(url: (searchURLComponentrs.url)!)
             request.httpMethod = "GET"
-            for (key, value) in headers {
+            for (key, value) in headers2 {
                 request.setValue(value, forHTTPHeaderField: key)
             }
 
