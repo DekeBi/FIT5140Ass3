@@ -573,6 +573,14 @@
             </objects>
             <point key="canvasLocation" x="-1817" y="1807"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="fxA-ki-aBf">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Fsi-By-t1L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhp-Ha-4YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-920" y="1807"/>
+        </scene>
     </scenes>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="115"/>
