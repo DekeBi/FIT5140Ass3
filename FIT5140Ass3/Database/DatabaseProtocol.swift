@@ -27,7 +27,7 @@ protocol DatabaseListener: AnyObject {
 }
 
 protocol DatabaseProtocol: AnyObject {
-    func addCinema(id: String, cinema_id: String, name: String, address: String, city: String) -> Cinema
+    func addCinema(id: String, cinema_id: String, name: String, address: String, city: String, lat: String, lng: String) -> Cinema
     
     func addListener(listener: DatabaseListener)
     //func addFilm(filmName: String) -> Film

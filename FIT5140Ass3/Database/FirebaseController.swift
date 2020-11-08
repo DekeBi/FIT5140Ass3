@@ -133,13 +133,13 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 filmList.append(film)
             }
             else if change.type == .modified {
-//                let index = getCinemaIndexByID(Id)!
-//                filmList[index] = film
+                  let index = getFilmIndexByID(Id)!
+                  filmList[index] = film
             }
             else if change.type == .removed {
-//                if let index = getFilmIndexByID(Id) {
- //                   filmList.remove(at: index)
-//                }
+                  if let index = getFilmIndexByID(Id) {
+                      filmList.remove(at: index)
+                  }
             }
             
         }
@@ -159,20 +159,38 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func getCinemaByID(_ id: String) -> Cinema? {
         for cinema in cinemaList {
-            if cinema.cinema_id == id {
+            if cinema.id == id {
                 return cinema
             }
         }
         return nil
     }
     
-    func addCinema(id: String, cinema_id: String, name: String, address: String, city: String) -> Cinema {
+    func getFilmIndexByID(_ id: String) -> Int? {
+        if let film = getFilmByID(id) {
+            return filmList.firstIndex(of: film)
+        }
+        return nil
+    }
+    
+    func getFilmByID(_ id: String) -> Film? {
+        for film in filmList {
+            if film.id == id {
+                return film
+            }
+        }
+        return nil
+    }
+    
+    func addCinema(id: String, cinema_id: String, name: String, address: String, city: String, lat: String, lng: String) -> Cinema {
         let cinema = Cinema()
         cinema.id = id
         cinema.cinema_id = cinema_id
         cinema.name = name
         cinema.address = address
         cinema.city = city
+        cinema.lat = lat
+        cinema.lng = lng
 
         do {
             if let cinemaRef = try cinemaRef?.addDocument(from: cinema) {

@@ -14,12 +14,16 @@ class CinemaData: NSObject, Decodable {
     var name: String?
     var address: String?
     var city: String?
+    var lat: String?
+    var lng: String?
     
     private enum RootKeys: String, CodingKey {
         case cinema_id
         case name = "cinema_name"
         case address
         case city
+        case lat
+        case lng
     }
     
     required init(from decoder: Decoder) throws {
@@ -28,6 +32,8 @@ class CinemaData: NSObject, Decodable {
         name = try? cinemaContainer.decode(String.self, forKey: .name)
         address = try? cinemaContainer.decode(String.self, forKey: .address)
         city = try? cinemaContainer.decode(String.self, forKey: .city)
+        lat = try? cinemaContainer.decode(String.self, forKey: .lat)
+        lng = try? cinemaContainer.decode(String.self, forKey: .lng)
     }
 
 }

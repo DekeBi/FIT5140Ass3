@@ -14,6 +14,8 @@ enum CodingKeys: String, CodingKey {
     case name
     case address
     case city
+    case lat
+    case lng
 }
 
 class Cinema: NSObject, Decodable, Encodable {
@@ -22,6 +24,8 @@ class Cinema: NSObject, Decodable, Encodable {
     var name : String
     var address : String
     var city: String
+    var lat: String
+    var lng: String
     
     override init() {
         id = ""
@@ -29,13 +33,17 @@ class Cinema: NSObject, Decodable, Encodable {
         name = ""
         address = ""
         city = ""
+        lat = ""
+        lng = ""
     }
     
-    init(id : String, cinema_id : String, name : String, address : String, city: String) {
+    init(id : String, cinema_id : String, name : String, address : String, city: String, lat: String, lng: String) {
         self.cinema_id = cinema_id
         self.name = name
         self.address = address
         self.city = city
+        self.lat = lat
+        self.lng = lng
     }
     
 }

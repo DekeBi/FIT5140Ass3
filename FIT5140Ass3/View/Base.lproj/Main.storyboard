@@ -12,7 +12,7 @@
         <scene sceneID="Vvt-Wx-5ZJ">
             <objects>
                 <tabBarController id="FC5-bs-K8T" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="T3A-6F-LOz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="T3A-6F-LOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="-2575" y="-437"/>
         </scene>
-        <!--Movie Search-->
+        <!--Search Movie-->
         <scene sceneID="BtF-f5-uqk">
             <objects>
                 <navigationController id="ZUB-gl-WTX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movie Search" selectedImage="magnifyingglass" catalog="system" id="jxX-ss-gGh"/>
+                    <tabBarItem key="tabBarItem" title="Search Movie" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="jxX-ss-gGh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbc-iS-CWD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -49,7 +49,7 @@
         <scene sceneID="NRG-GY-OJu">
             <objects>
                 <navigationController id="LLv-xM-4Wq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="My Favourite" selectedImage="suit.heart" catalog="system" id="2bH-dy-KUa"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="My Favourite" image="heart" catalog="system" selectedImage="heart.fill" id="2bH-dy-KUa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vBq-Hy-40T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
         <scene sceneID="lbE-ez-NB4">
             <objects>
                 <navigationController id="zGO-aq-iZK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cinema" selectedImage="video" catalog="system" id="A3h-Sp-IFH"/>
+                    <tabBarItem key="tabBarItem" title="Cinema" image="video" catalog="system" selectedImage="video.fill" id="A3h-Sp-IFH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BPJ-AF-NeH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,7 +83,7 @@
         <scene sceneID="SMi-4N-elE">
             <objects>
                 <navigationController id="MPy-tz-AtT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="sxA-fG-twl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="sxA-fG-twl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7bE-e1-Sj6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,24 +269,18 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpN-Fs-XfG" customClass="GMSMapView">
-                                <rect key="frame" x="20" y="317" width="374" height="491"/>
+                                <rect key="frame" x="20" y="313" width="374" height="495"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oOv-hV-9cD">
-                                <rect key="frame" x="20" y="270" width="374" height="34"/>
+                                <rect key="frame" x="20" y="270" width="374" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Please input your address" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LtZ-Y1-FAA">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="34"/>
-                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSt-O1-DVJ">
-                                        <rect key="frame" x="253" y="0.0" width="21" height="34"/>
-                                        <state key="normal" image="location.fill" catalog="system"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="30"/>
+                                        <state key="normal" title="Use Current Location" image="location.fill" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q1-Vg-0iV">
-                                        <rect key="frame" x="294" y="0.0" width="80" height="34"/>
+                                        <rect key="frame" x="294" y="0.0" width="80" height="30"/>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="LJU-20-kzJ"/>
@@ -583,10 +577,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <image name="video" catalog="system" width="128" height="83"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
     </resources>
 </document>

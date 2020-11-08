@@ -74,9 +74,11 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         let name = cinemaData.name!
         let address = cinemaData.address!
         let city = cinemaData.city!
+        let lat = cinemaData.lat!
+        let lng = cinemaData.lng!
         
         let inStr = String(cinema_id)
-        let _ = databaseController?.addCinema(id:id, cinema_id:inStr, name:name, address:address, city:city)
+        let _ = databaseController?.addCinema(id:id, cinema_id:inStr, name:name, address:address, city:city, lat: lat, lng: lng)
         navigationController?.popViewController(animated: true)
     }
 
@@ -116,7 +118,7 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
             
         var request = URLRequest(url: (searchURLComponentrs.url)!)
             request.httpMethod = "GET"
-            for (key, value) in headers2 {
+            for (key, value) in headers {
                 request.setValue(value, forHTTPHeaderField: key)
             }
 
