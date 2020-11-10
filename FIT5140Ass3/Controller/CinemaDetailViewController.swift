@@ -112,7 +112,7 @@ class CinemaDetailViewController: UIViewController,CLLocationManagerDelegate {
                 
             self.mapView.camera = camera
                 
-            self.showMarker(position: self.mapView.camera.target, name: "Your Current Location", city: "Your Current Location")
+            self.showMarker(position: self.mapView.camera.target, name: "My Home", city: "Current Location")
             
         }
         else{
