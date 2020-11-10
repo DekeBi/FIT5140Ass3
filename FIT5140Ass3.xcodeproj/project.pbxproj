@@ -25,6 +25,8 @@
 		86F776DC255365BC008E63FC /* GeometryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776DB255365BC008E63FC /* GeometryData.swift */; };
 		86F776E02553663E008E63FC /* locationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776DF2553663E008E63FC /* locationData.swift */; };
 		86F776E32553670D008E63FC /* LatLongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776E22553670D008E63FC /* LatLongData.swift */; };
+		86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */; };
+		86F8744B255A0082000BF9E7 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F8744A255A0082000BF9E7 /* RouteData.swift */; };
 		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
 		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
 		A42655232553110C0074B50D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42655222553110C0074B50D /* Film.swift */; };
@@ -62,6 +64,8 @@
 		86F776DB255365BC008E63FC /* GeometryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryData.swift; sourceTree = "<group>"; };
 		86F776DF2553663E008E63FC /* locationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationData.swift; sourceTree = "<group>"; };
 		86F776E22553670D008E63FC /* LatLongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLongData.swift; sourceTree = "<group>"; };
+		86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVolumeData.swift; sourceTree = "<group>"; };
+		86F8744A255A0082000BF9E7 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
 		89ED3F0E4566F02F7F378884 /* Pods-FIT5140Ass3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.release.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.release.xcconfig"; sourceTree = "<group>"; };
 		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				86F776DB255365BC008E63FC /* GeometryData.swift */,
 				86F776DF2553663E008E63FC /* locationData.swift */,
 				86F776E22553670D008E63FC /* LatLongData.swift */,
+				86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */,
+				86F8744A255A0082000BF9E7 /* RouteData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				A4ABBFE72551777300F3EE71 /* MulticastDelegate.swift in Sources */,
 				A492A61B2552885A00530DAD /* utilities.swift in Sources */,
 				A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */,
+				86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */,
 				868CA150255024990053E1B4 /* MapViewController.swift in Sources */,
 				868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */,
 				868CA14025501B9A0053E1B4 /* MyFavouriteViewController.swift in Sources */,
@@ -366,6 +373,7 @@
 				868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */,
 				A4ABBFEB255179FD00F3EE71 /* CinemaData.swift in Sources */,
 				A4ABBFE9255178EC00F3EE71 /* SearchCinemasTableViewController.swift in Sources */,
+				86F8744B255A0082000BF9E7 /* RouteData.swift in Sources */,
 				A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */,
 				860B0F72254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld in Sources */,
 				86F776DC255365BC008E63FC /* GeometryData.swift in Sources */,

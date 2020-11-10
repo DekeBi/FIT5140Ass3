@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Canberra Theatre Centre.gpx">
+   </FileRef>
+   <FileRef
       location = "group:FIT5140Ass3.xcodeproj">
    </FileRef>
    <FileRef

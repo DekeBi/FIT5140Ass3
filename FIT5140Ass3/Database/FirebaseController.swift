@@ -92,8 +92,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 cinemaList.append(cinema)
             }
             else if change.type == .modified {
-                let index = getCinemaIndexByID(Id)!
+                if let index = getCinemaIndexByID(Id){
                 cinemaList[index] = cinema
+                }
             }
             else if change.type == .removed {
                 if let index = getCinemaIndexByID(Id) {
