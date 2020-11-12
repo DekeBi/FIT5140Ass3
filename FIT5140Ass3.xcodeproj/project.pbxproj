@@ -31,6 +31,8 @@
 		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
 		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
 		A42655232553110C0074B50D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42655222553110C0074B50D /* Film.swift */; };
+		A47C2734255D84130040A98E /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C2733255D84130040A98E /* VideoData.swift */; };
+		A47C2736255D854E0040A98E /* VedioVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C2735255D854E0040A98E /* VedioVolumeData.swift */; };
 		A492A61B2552885A00530DAD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492A61A2552885A00530DAD /* utilities.swift */; };
 		A4ABBFDA255174A600F3EE71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */; };
 		A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */; };
@@ -74,6 +76,8 @@
 		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
 		A42655222553110C0074B50D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		A47C2733255D84130040A98E /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		A47C2735255D854E0040A98E /* VedioVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioVolumeData.swift; sourceTree = "<group>"; };
 		A492A61A2552885A00530DAD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */,
 				86F8744A255A0082000BF9E7 /* RouteData.swift */,
 				A4C9DEE8255B91B70009971D /* FilmData.swift */,
+				A47C2733255D84130040A98E /* VideoData.swift */,
+				A47C2735255D854E0040A98E /* VedioVolumeData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				A4ABBFE52551772D00F3EE71 /* Cinema.swift in Sources */,
 				A4ABBFEF25517BF600F3EE71 /* AddCinemaDelegate.swift in Sources */,
 				A4C9DEEB255BBF9D0009971D /* SearchFilterViewController.swift in Sources */,
+				A47C2736255D854E0040A98E /* VedioVolumeData.swift in Sources */,
 				A4ABBFF125517C2200F3EE71 /* AppDelegate.swift in Sources */,
 				A42655232553110C0074B50D /* Film.swift in Sources */,
 				A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */,
@@ -376,6 +383,7 @@
 				86F776E02553663E008E63FC /* locationData.swift in Sources */,
 				A4ABBFE32551770400F3EE71 /* DatabaseProtocol.swift in Sources */,
 				A4ABBFE72551777300F3EE71 /* MulticastDelegate.swift in Sources */,
+				A47C2734255D84130040A98E /* VideoData.swift in Sources */,
 				A492A61B2552885A00530DAD /* utilities.swift in Sources */,
 				A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */,
 				86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */,

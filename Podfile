@@ -14,4 +14,6 @@ target 'FIT5140Ass3' do
 	pod 'GooglePlaces'
 	pod 'GoogleMaps'
 
+	pod 'youtube-ios-player-helper'
+
 end
