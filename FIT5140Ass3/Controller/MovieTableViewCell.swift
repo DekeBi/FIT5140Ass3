@@ -16,6 +16,8 @@ class MovieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        despLabel.numberOfLines = 0
+        despLabel.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

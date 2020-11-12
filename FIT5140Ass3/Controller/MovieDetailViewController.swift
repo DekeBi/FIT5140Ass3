@@ -53,6 +53,7 @@ class MovieDetailViewController: UIViewController {
         
     }
 
+    // https://www.youtube.com/watch?v=bsM1qdGAVbU
     func searchVedio(movie_id : Int){
         
         let vedioURL = "https://api.themoviedb.org/3/movie/\(movie_id)/videos?api_key=ebaec4a7e78e4ee21f565b43fbc4e40e&language=en-US"
@@ -83,5 +84,22 @@ class MovieDetailViewController: UIViewController {
         }
 
         task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mid = String(selectedFilm!.id!)
+        let method = mid + "/recommendations"
+        if segue.identifier == "findRecomSegue" {
+            let destination = segue.destination as! MovieSearchTableViewController
+            destination.searchMethod = method
+        }
+        
+        if segue.identifier == "findSimilarSegue" {
+            let mid = String(selectedFilm!.id!)
+            let method = mid + "/similar"
+            let destination = segue.destination as! MovieSearchTableViewController
+            destination.searchMethod = method
+        }
+        
     }
 }
