@@ -438,7 +438,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.15109615509999999" green="0.27255305590000001" blue="0.43846549010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.42367519399999998" green="0.30386479109999998" blue="0.41630671940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Fv5-Mt-Dc1" firstAttribute="trailing" secondItem="VUZ-7F-R81" secondAttribute="trailing" id="20j-lp-9lv"/>
                                                 <constraint firstItem="VUZ-7F-R81" firstAttribute="leading" secondItem="DHZ-c2-ncJ" secondAttribute="trailing" constant="8" id="CsB-Wg-OPk"/>
@@ -466,7 +466,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15109615510333982" green="0.27255305594943874" blue="0.43846549014416236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.42367519399999998" green="0.30386479109999998" blue="0.41630671940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="V0B-Je-JOe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Wtk-DD-P9r"/>
@@ -616,7 +616,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15109615509999999" green="0.27255305590000001" blue="0.43846549010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.42367519399999998" green="0.30386479109999998" blue="0.41630671940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="g0f-O1-xbj" secondAttribute="trailing" constant="20" id="7xP-IN-fWO"/>
                             <constraint firstItem="p4e-6b-zc5" firstAttribute="leading" secondItem="Vxz-Qn-yzL" secondAttribute="trailing" constant="42" id="8E9-4h-47d"/>
