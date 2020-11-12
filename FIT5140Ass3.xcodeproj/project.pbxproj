@@ -41,6 +41,8 @@
 		A4ABBFED25517A1A00F3EE71 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFEC25517A1A00F3EE71 /* VolumeData.swift */; };
 		A4ABBFEF25517BF600F3EE71 /* AddCinemaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFEE25517BF600F3EE71 /* AddCinemaDelegate.swift */; };
 		A4ABBFF125517C2200F3EE71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABBFF025517C2200F3EE71 /* AppDelegate.swift */; };
+		A4C9DEE9255B91B70009971D /* FilmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9DEE8255B91B70009971D /* FilmData.swift */; };
+		A4C9DEEB255BBF9D0009971D /* SearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9DEEA255BBF9D0009971D /* SearchFilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		A4ABBFEC25517A1A00F3EE71 /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		A4ABBFEE25517BF600F3EE71 /* AddCinemaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCinemaDelegate.swift; sourceTree = "<group>"; };
 		A4ABBFF025517C2200F3EE71 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4C9DEE8255B91B70009971D /* FilmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmData.swift; sourceTree = "<group>"; };
+		A4C9DEEA255BBF9D0009971D /* SearchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewController.swift; sourceTree = "<group>"; };
 		BA397B1C1C362FAB1CD193F5 /* Pods-FIT5140Ass3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.debug.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 		860B0F66254E57FE00D427C1 /* FIT5140Ass3 */ = {
 			isa = PBXGroup;
 			children = (
+				A4C9DEEC255BC89B0009971D /* Utilities */,
 				A4ABBFDF2551764100F3EE71 /* View */,
 				A4ABBFDE255175D100F3EE71 /* Controller */,
 				A4ABBFDD255175C300F3EE71 /* Delegate */,
@@ -135,7 +140,6 @@
 				860B0F78254E580000D427C1 /* Info.plist */,
 				A4ABBFD9255174A600F3EE71 /* GoogleService-Info.plist */,
 				860B0F70254E57FE00D427C1 /* FIT5140Ass3.xcdatamodeld */,
-				A492A61A2552885A00530DAD /* utilities.swift */,
 			);
 			path = FIT5140Ass3;
 			sourceTree = "<group>";
@@ -170,6 +174,7 @@
 				86F776E22553670D008E63FC /* LatLongData.swift */,
 				86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */,
 				86F8744A255A0082000BF9E7 /* RouteData.swift */,
+				A4C9DEE8255B91B70009971D /* FilmData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				A4ABBFE8255178EB00F3EE71 /* SearchCinemasTableViewController.swift */,
 				A426551E255301610074B50D /* DataCollectionViewCell.swift */,
 				A4265520255309E70074B50D /* FilmTableViewCell.swift */,
+				A4C9DEEA255BBF9D0009971D /* SearchFilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				860B0F75254E580000D427C1 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A4C9DEEC255BC89B0009971D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A492A61A2552885A00530DAD /* utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,9 +364,11 @@
 			files = (
 				A4ABBFE52551772D00F3EE71 /* Cinema.swift in Sources */,
 				A4ABBFEF25517BF600F3EE71 /* AddCinemaDelegate.swift in Sources */,
+				A4C9DEEB255BBF9D0009971D /* SearchFilterViewController.swift in Sources */,
 				A4ABBFF125517C2200F3EE71 /* AppDelegate.swift in Sources */,
 				A42655232553110C0074B50D /* Film.swift in Sources */,
 				A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */,
+				A4C9DEE9255B91B70009971D /* FilmData.swift in Sources */,
 				A4ABBFED25517A1A00F3EE71 /* VolumeData.swift in Sources */,
 				86F776E02553663E008E63FC /* locationData.swift in Sources */,
 				A4ABBFE32551770400F3EE71 /* DatabaseProtocol.swift in Sources */,

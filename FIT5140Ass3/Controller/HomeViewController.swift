@@ -19,9 +19,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     weak var databaseController: DatabaseProtocol?
     
-    var imgArr = [UIImage(named:"image3")?.reSizeImage(reSize: CGSize(width: 414, height: 300)) ,
-        UIImage(named:"image2")?.reSizeImage(reSize: CGSize(width: 414, height: 300)),
-        UIImage(named:"image4")?.reSizeImage(reSize: CGSize(width: 414, height: 300))]
+    var imgArr = [UIImage(named:"homepage1")?.reSizeImage(reSize: CGSize(width: 414, height: 300)) ,
+        UIImage(named:"homepage2")?.reSizeImage(reSize: CGSize(width: 414, height: 300)),
+        UIImage(named:"homepage3")?.reSizeImage(reSize: CGSize(width: 414, height: 300))]
     
     override func viewDidLoad() {
         super.viewDidLoad()

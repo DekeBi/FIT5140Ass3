@@ -11,9 +11,13 @@ import Foundation
 class VolumeData: NSObject, Decodable {
     
     var cinemas: [CinemaData]?
+    var results: [FilmData]?
     
     private enum CodingKeys: String, CodingKey {
         case cinemas
+        case results
     }
 
 }
+
+
