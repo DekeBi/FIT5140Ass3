@@ -22,7 +22,6 @@ class MovieSearchTableViewController: UITableViewController {
     
     var indicator = UIActivityIndicatorView()
     
-    
     private var dataTask: URLSessionDataTask?
     
     override func viewDidLoad() {
@@ -30,7 +29,11 @@ class MovieSearchTableViewController: UITableViewController {
 
         indicator.style = UIActivityIndicatorView.Style.medium
         indicator.center = self.tableView.center
+        
         self.view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        indicator.backgroundColor = UIColor.clear
         
         searchFilms()
         
@@ -84,6 +87,7 @@ class MovieSearchTableViewController: UITableViewController {
 
         let imageURL = URL(string: urls)
         let task = URLSession.shared.dataTask(with: imageURL!) { (data, response, error) in
+            
             if let error = error{
                 print(error.localizedDescription)
             }else{
@@ -109,6 +113,8 @@ class MovieSearchTableViewController: UITableViewController {
             }
             if self.imageURLsArray.count == 0 {
                 DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                    self.indicator.hidesWhenStopped = true
                     self.tableView.reloadData()
                 }
             }

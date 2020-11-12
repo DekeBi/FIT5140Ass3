@@ -29,7 +29,25 @@ class MovieDetailViewController: UIViewController {
         overviewLabel.numberOfLines = 0
         overviewLabel.sizeToFit()
         overviewLabel.text = selectedFilm?.overview
-        ratingLabel.text = "\(selectedFilm!.vote_average!)"
+        let rating = Int(selectedFilm!.vote_average!)
+        let ratingText = (0..<rating).reduce("") { (acc, _) -> String in
+            return acc + "★"
+        }
+        //ratingLabel.text = "\(selectedFilm!.vote_average!)"
+        ratingLabel.text = ratingText + "  " + "\(ratingText.count)/10"
+        
+        favoriteBtn.layer.cornerRadius = 5
+        favoriteBtn.layer.borderWidth = 1
+        favoriteBtn.layer.borderColor = UIColor.purple.cgColor
+        
+        recomBtn.layer.cornerRadius = 5
+        recomBtn.layer.borderWidth = 1
+        recomBtn.layer.borderColor = UIColor.purple.cgColor
+        
+        simBtn.layer.cornerRadius = 5
+        simBtn.layer.borderWidth = 1
+        simBtn.layer.borderColor = UIColor.purple.cgColor
+        
         let movieId = selectedFilm?.id
         searchVedio(movie_id: movieId!)
         
