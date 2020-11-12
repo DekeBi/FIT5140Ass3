@@ -13,9 +13,12 @@ class MovieSearchTableViewController: UITableViewController {
     
     var newFilms = [FilmData]()
     
+    var imageURLsArray : [String] = []
+    
     let CELL_FILM = "filmCell"
     
     let API_KEY = "ebaec4a7e78e4ee21f565b43fbc4e40e"
+    let POST_PATH = "https://image.tmdb.org/t/p/original"
     
     var indicator = UIActivityIndicatorView()
     
@@ -59,27 +62,90 @@ class MovieSearchTableViewController: UITableViewController {
                 let volumeData = try decoder.decode(VolumeData.self, from: data!)
                 if let films = volumeData.results {
                     self.newFilms.append(contentsOf: films)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()}
+                    for film in films {
+                        let imgURL = self.POST_PATH + film.poster_path!
+                        //let imgURL =  film.poster_path
+                        //if imgURL != nil {
+                        self.imageURLsArray.append(imgURL)
+                        //}
+                        //self.downloadPicturesAndSaveToUserDefault(urls: imgURL)
+                    }
+                    
                 }
+                self.downloadPicturesAndSaveToUserDefault()
+                
             } catch let err {
                 print(err) }
         }
         dataTask?.resume()
     }
     
+    func downloadPicturesAndSaveToUserDefault(urls: String){
+
+        let imageURL = URL(string: urls)
+        let task = URLSession.shared.dataTask(with: imageURL!) { (data, response, error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else{
+                UserDefaults.standard.set(data,forKey: urls)
+            }
+        }
+        task.resume()
+    }
+    
+    func downloadPicturesAndSaveToUserDefault(){
+        let imageURLString = imageURLsArray.removeFirst()
+        
+        let imageURL = URL(string: imageURLString)
+        let task = URLSession.shared.dataTask(with: imageURL!){
+            (data, response, error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else{
+                UserDefaults.standard.set(data, forKey: imageURLString)
+            }
+            if self.imageURLsArray.count > 0 {
+                self.downloadPicturesAndSaveToUserDefault()
+            }
+            if self.imageURLsArray.count == 0 {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        task.resume()
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FILM, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FILM, for: indexPath) as! MovieTableViewCell
         
         let film = newFilms[indexPath.row]
-        cell.textLabel?.text = film.title
-        cell.detailTextLabel?.text = film.overview
+        cell.nameLabel.text = film.title
+        cell.releaseLabel.text = film.release_date
+        cell.despLabel.text = film.overview
+        let imgURL = film.poster_path
+        let imgURL2 = self.POST_PATH + film.poster_path!
+        if imgURL != nil {
+            let imageData = UserDefaults.standard.data(forKey: imgURL2)
+            if imageData != nil {
+                cell.movieImg.image = UIImage(data: imageData!)
+            }
+        }
         
         return cell
     }
-    
+    // segue to movie detail
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedFilm = newFilms[indexPath.row]
+        performSegue(withIdentifier: "showMovieDetail", sender: selectedFilm)
+    }
 
+    // MARK: - Segue Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMovieDetail"{
+            let destination = segue.destination as! MovieDetailViewController
+            destination.selectedFilm = sender as? FilmData
+        }
+    }
     
-
 }

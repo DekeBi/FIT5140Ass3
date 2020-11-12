@@ -27,6 +27,7 @@
 		86F776E32553670D008E63FC /* LatLongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776E22553670D008E63FC /* LatLongData.swift */; };
 		86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */; };
 		86F8744B255A0082000BF9E7 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F8744A255A0082000BF9E7 /* RouteData.swift */; };
+		A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */; };
 		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
 		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
 		A42655232553110C0074B50D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42655222553110C0074B50D /* Film.swift */; };
@@ -69,6 +70,7 @@
 		86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVolumeData.swift; sourceTree = "<group>"; };
 		86F8744A255A0082000BF9E7 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
 		89ED3F0E4566F02F7F378884 /* Pods-FIT5140Ass3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.release.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.release.xcconfig"; sourceTree = "<group>"; };
+		A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
 		A42655222553110C0074B50D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				A426551E255301610074B50D /* DataCollectionViewCell.swift */,
 				A4265520255309E70074B50D /* FilmTableViewCell.swift */,
 				A4C9DEEA255BBF9D0009971D /* SearchFilterViewController.swift */,
+				A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				868CA1472550204C0053E1B4 /* MovieSearchTableViewController.swift in Sources */,
 				868CA14A2550228B0053E1B4 /* HomeViewController.swift in Sources */,
 				868CA13D255014DC0053E1B4 /* MovieDetailViewController.swift in Sources */,
+				A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */,
 				86F776D925536561008E63FC /* AddressVolumeData.swift in Sources */,
 				86F776E32553670D008E63FC /* LatLongData.swift in Sources */,
 				868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */,

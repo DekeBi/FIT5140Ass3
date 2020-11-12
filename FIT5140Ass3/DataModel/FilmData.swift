@@ -8,38 +8,24 @@
 import UIKit
 
 class FilmData: NSObject, Decodable {
-//    var Title: String?
-//    var Year: Int?
-//    var Released: String?
-//    var Genre: String?
-//    var Plot: String?
-//    var Actors: String?
-//    var Country: String?
-//    var Language: String?
-//    var Poster: String?
-//    var imdbRating: Int?
-//    var imdbID: String?
+
     var id: Int?
     var title: String?
     var overview: String?
     var release_date: String?
+    var poster_path: String?
+    var backdrop_path: String?
+    var vote_average: Double?
     
     private enum RootKeys: String, CodingKey {
-//        case Title
-//        case Year
-//        case Released
-//        case Genre
-//        case Plot
-//        case Actors
-//        case Country
-//        case Language
-//        case Poster
-//        case imdbRating
-//        case imdbID
+
         case id
         case title
         case overview
         case release_date
+        case poster_path
+        case backdrop_path
+        case vote_average
     }
     
     required init(from decoder: Decoder) throws {
@@ -48,16 +34,8 @@ class FilmData: NSObject, Decodable {
         title = try? filmContainer.decode(String.self, forKey: .title)
         overview = try? filmContainer.decode(String.self, forKey: .overview)
         release_date = try? filmContainer.decode(String.self, forKey: .release_date)
-//        Title = try? filmContainer.decode(String.self, forKey: .Title)
-//        Year = try? filmContainer.decode(Int.self, forKey: .Year)
-//        Released = try? filmContainer.decode(String.self, forKey: .Released)
-//        Genre = try? filmContainer.decode(String.self, forKey: .Genre)
-//        Plot = try? filmContainer.decode(String.self, forKey: .Plot)
-//        Actors = try? filmContainer.decode(String.self, forKey: .Actors)
-//        Country = try? filmContainer.decode(String.self, forKey: .Country)
-//        Language = try? filmContainer.decode(String.self, forKey: .Language)
-//        Poster = try? filmContainer.decode(String.self, forKey: .Poster)
-//        imdbRating = try? filmContainer.decode(Int.self, forKey: .imdbRating)
-//        imdbID = try? filmContainer.decode(String.self, forKey: .imdbID)
+        poster_path = try? filmContainer.decode(String.self, forKey: .poster_path)
+        backdrop_path = try? filmContainer.decode(String.self, forKey: .backdrop_path)
+        vote_average = try? filmContainer.decode(Double.self, forKey: .vote_average)
     }
 }

@@ -87,15 +87,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedFilm = allFilms[indexPath.row]
-        performSegue(withIdentifier: "showFilmDetail", sender: selectedFilm)
+        //performSegue(withIdentifier: "showFilmDetail", sender: selectedFilm)
     }
 
     // MARK: - Segue Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showFilmDetail"{
+        //if segue.identifier == "showFilmDetail"{
             //let destination = segue.destination as! MovieDetailViewController
             //destination.selectedFilm = sender as? Film
-        }
+        //}
     }
     
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {

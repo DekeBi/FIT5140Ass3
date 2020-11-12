@@ -9,12 +9,14 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
 
-    var selectedFilm : Film?
+    var selectedFilm : FilmData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //cinemaIdLabel.text = "\(selectedCinema!.cinema_id!)"
+        //cinemaNameLabel.text = selectedCinema?.name
+        
     }
 
 
