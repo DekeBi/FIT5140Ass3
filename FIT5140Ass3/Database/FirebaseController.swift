@@ -19,8 +19,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
     var database: Firestore
     var cinemaRef: CollectionReference?
     var filmRef:CollectionReference?
+    var movieRef:CollectionReference?
     var cinemaList: [Cinema]
     var filmList: [Film]
+    var movieList: [Movie]
     
     override init() {
         FirebaseApp.configure()
@@ -28,6 +30,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         database = Firestore.firestore()
         cinemaList = [Cinema]()
         filmList = [Film]()
+        movieList = [Movie]()
         
         super.init()
         
@@ -50,6 +53,17 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             self.parseCinemasSnapshot(snapshot: querySnapshot)
             self.setUpFilmListener()
+        }
+    }
+    
+    func setUpMovieListener() {
+        movieRef = database.collection("favoriteMovies")
+        movieRef?.addSnapshotListener {
+            (querySnapshot, error) in guard let querySnapshot = querySnapshot else {
+                print("Error fetching documents:\(error!)")
+                return
+            }
+            self.parseMoviesSnapshot(snapshot: querySnapshot)
         }
     }
     
@@ -106,6 +120,49 @@ class FirebaseController: NSObject, DatabaseProtocol {
         listeners.invoke{ (listener) in
         if listener.listenerType == ListenerType.cinemas || listener.listenerType == ListenerType.all {
             listener.onCinemaListChange(change: .update, cinemaList: cinemaList)
+        }
+        }
+    }
+    
+    // MARK:- Parse Functions for Firebase Firestore responses
+    func parseMoviesSnapshot(snapshot: QuerySnapshot) {
+        snapshot.documentChanges.forEach{(change) in let Id = change.document.documentID
+            print(Id)
+            
+            var parsedMovie: Movie?
+            
+            //get cinemas
+            do {
+                parsedMovie = try change.document.data(as: Movie.self)
+            } catch {
+                print("Unable to decode cinema. Is the movie malformed")
+                return
+            }
+            
+            guard let movie = parsedMovie else {
+                print("Document doesn't exist")
+                return;
+            }
+            
+            movie.refId = Id
+            if change.type == .added{
+                movieList.append(movie)
+            }
+            else if change.type == .modified {
+                if let index = getMovieIndexByID(Id){
+                movieList[index] = movie
+                }
+            }
+            else if change.type == .removed {
+                if let index = getMovieIndexByID(Id) {
+                    movieList.remove(at: index)
+                }
+            }
+            
+        }
+        listeners.invoke{ (listener) in
+        if listener.listenerType == ListenerType.movies || listener.listenerType == ListenerType.all {
+            listener.onMovieListChange(change: .update, movieList: movieList)
         }
         }
     }
@@ -167,6 +224,22 @@ class FirebaseController: NSObject, DatabaseProtocol {
         return nil
     }
     
+    func getMovieIndexByID(_ id: String) -> Int? {
+        if let movie = getMovieByID(id) {
+            return movieList.firstIndex(of: movie)
+        }
+        return nil
+    }
+    
+    func getMovieByID(_ id: String) -> Movie? {
+        for movie in movieList {
+            if movie.refId == id {
+                return movie
+            }
+        }
+        return nil
+    }
+    
     func getFilmIndexByID(_ id: String) -> Int? {
         if let film = getFilmByID(id) {
             return filmList.firstIndex(of: film)
@@ -202,6 +275,27 @@ class FirebaseController: NSObject, DatabaseProtocol {
             print("Failed to serialize cinema")
         }
         return cinema
+    }
+    
+    func addMovie(id: String, title: String, overview: String, release_data: String, poster_path: String, backdrop_path: String, vote_average: String) -> Movie{
+        let movie = Movie()
+        movie.id = id
+        movie.title = title
+        movie.overview = overview
+        movie.release_date = release_data
+        movie.poster_path = poster_path
+        movie.backdrop_path = backdrop_path
+        movie.vote_average = vote_average
+
+        do {
+            if let movieRef = try movieRef?.addDocument(from: movie) {
+                movie.refId = movieRef.documentID
+            }
+
+        } catch {
+            print("Failed to serialize movie")
+        }
+        return movie
     }
     
 //    func addFilm(filmName: String) -> Film {

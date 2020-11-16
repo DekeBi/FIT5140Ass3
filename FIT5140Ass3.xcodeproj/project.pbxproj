@@ -27,6 +27,7 @@
 		86F776E32553670D008E63FC /* LatLongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776E22553670D008E63FC /* LatLongData.swift */; };
 		86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */; };
 		86F8744B255A0082000BF9E7 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F8744A255A0082000BF9E7 /* RouteData.swift */; };
+		A40434B12562C4A900DD6CEA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40434B02562C4A900DD6CEA /* Movie.swift */; };
 		A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */; };
 		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
 		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
@@ -72,6 +73,7 @@
 		86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVolumeData.swift; sourceTree = "<group>"; };
 		86F8744A255A0082000BF9E7 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
 		89ED3F0E4566F02F7F378884 /* Pods-FIT5140Ass3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.release.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.release.xcconfig"; sourceTree = "<group>"; };
+		A40434B02562C4A900DD6CEA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				A4ABBFE22551770400F3EE71 /* DatabaseProtocol.swift */,
 				A4ABBFE42551772D00F3EE71 /* Cinema.swift */,
 				A42655222553110C0074B50D /* Film.swift */,
+				A40434B02562C4A900DD6CEA /* Movie.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				A4ABBFE72551777300F3EE71 /* MulticastDelegate.swift in Sources */,
 				A47C2734255D84130040A98E /* VideoData.swift in Sources */,
 				A492A61B2552885A00530DAD /* utilities.swift in Sources */,
+				A40434B12562C4A900DD6CEA /* Movie.swift in Sources */,
 				A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */,
 				86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */,
 				868CA150255024990053E1B4 /* MapViewController.swift in Sources */,

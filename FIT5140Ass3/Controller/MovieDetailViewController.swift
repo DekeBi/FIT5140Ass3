@@ -16,10 +16,12 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var favoriteBtn: UIButton!
+    
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var simBtn: UIButton!
     @IBOutlet weak var recomBtn: UIButton!
     var newVideos = [VideoData]()
+    weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +38,24 @@ class MovieDetailViewController: UIViewController {
         //ratingLabel.text = "\(selectedFilm!.vote_average!)"
         ratingLabel.text = ratingText + "  " + "\(ratingText.count)/10"
         
-        favoriteBtn.layer.cornerRadius = 5
-        favoriteBtn.layer.borderWidth = 1
-        favoriteBtn.layer.borderColor = UIColor.purple.cgColor
+//        favoriteBtn.layer.cornerRadius = 5
+//        favoriteBtn.layer.borderWidth = 1
+//        favoriteBtn.layer.borderColor = UIColor.purple.cgColor
         
-        recomBtn.layer.cornerRadius = 5
-        recomBtn.layer.borderWidth = 1
-        recomBtn.layer.borderColor = UIColor.purple.cgColor
+        //recomBtn.layer.cornerRadius = 5
+        //recomBtn.layer.borderWidth = 1
+        //recomBtn.layer.borderColor = UIColor.purple.cgColor
         
-        simBtn.layer.cornerRadius = 5
-        simBtn.layer.borderWidth = 1
-        simBtn.layer.borderColor = UIColor.purple.cgColor
+        //simBtn.layer.cornerRadius = 5
+        //simBtn.layer.borderWidth = 1
+        //simBtn.layer.borderColor = UIColor.purple.cgColor
         
         let movieId = selectedFilm?.id
         searchVedio(movie_id: movieId!)
+        
+        //db
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
         
     }
 
@@ -84,6 +90,20 @@ class MovieDetailViewController: UIViewController {
         }
 
         task.resume()
+    }
+    
+    @IBAction func addBtn(_ sender: Any) {
+        let id = selectedFilm!.id!
+        let inStr = String(id)
+        let title = selectedFilm?.title
+        let overview = selectedFilm?.overview
+        let release_data = selectedFilm?.release_date
+        let poster_path = selectedFilm?.poster_path
+        let backdrop_path = selectedFilm?.backdrop_path
+        let vote_average = selectedFilm!.vote_average!
+        let voteStr = String(vote_average)
+        let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path!,backdrop_path:backdrop_path!,vote_average:voteStr)
+        showAlert(withTitle: "Adding Successful", message: "Already added this movie to your favorite")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

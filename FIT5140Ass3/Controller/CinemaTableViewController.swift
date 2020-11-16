@@ -9,6 +9,10 @@
 import UIKit
 
 class CinemaTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
+    func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
+        // do something
+    }
+    
     
     let CELL_CINEMA = "cinemaCell"
     var allCinemas: [Cinema] = []

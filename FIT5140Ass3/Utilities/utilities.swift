@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-// showAlert(withTitle: "Adding Failed", message: "Already added this plant")
+// showAlert(withTitle: "Adding Failed", message: "Already added this movie")
 extension UIViewController {
     func showAlert(withTitle title: String?, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -11,6 +11,10 @@ class MovieSearchTableViewController: UITableViewController {
 
     var searchMethod: String?
     
+    var query: String?
+    
+    var year: String?
+    
     var newFilms = [FilmData]()
     
     var imageURLsArray : [String] = []
@@ -52,7 +56,21 @@ class MovieSearchTableViewController: UITableViewController {
     }
 
     func searchFilms(){
-        let movieURL = "https://api.themoviedb.org/3/movie/" + searchMethod! + "?api_key=ebaec4a7e78e4ee21f565b43fbc4e40e&language=en-US&page=1"
+        var movieURL = "https://api.themoviedb.org/3/"
+        if (query == nil && year == nil) {
+            movieURL = movieURL + "movie/"
+        }
+        
+        movieURL = movieURL + searchMethod! + "?api_key=" + API_KEY + "&language=en-US&page=1"
+        
+        if (query != nil) {
+            movieURL = movieURL + searchMethod! +  "&include_adult=false&query=" + query!
+        }
+        if (year != nil) {
+            movieURL = movieURL + "&year=" + year!
+        }
+        
+        print(movieURL)
         guard let url = URL(string: movieURL) else {return}
 
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -98,28 +116,33 @@ class MovieSearchTableViewController: UITableViewController {
     }
     
     func downloadPicturesAndSaveToUserDefault(){
-        let imageURLString = imageURLsArray.removeFirst()
-        
-        let imageURL = URL(string: imageURLString)
-        let task = URLSession.shared.dataTask(with: imageURL!){
-            (data, response, error) in
-            if let error = error{
-                print(error.localizedDescription)
-            }else{
-                UserDefaults.standard.set(data, forKey: imageURLString)
-            }
-            if self.imageURLsArray.count > 0 {
-                self.downloadPicturesAndSaveToUserDefault()
-            }
-            if self.imageURLsArray.count == 0 {
-                DispatchQueue.main.async {
-                    self.indicator.stopAnimating()
-                    self.indicator.hidesWhenStopped = true
-                    self.tableView.reloadData()
+        if (!imageURLsArray.isEmpty) {
+            let imageURLString = imageURLsArray.removeFirst()
+            
+            let imageURL = URL(string: imageURLString)
+            let task = URLSession.shared.dataTask(with: imageURL!){
+                (data, response, error) in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else{
+                    UserDefaults.standard.set(data, forKey: imageURLString)
+                }
+                if self.imageURLsArray.count > 0 {
+                    self.downloadPicturesAndSaveToUserDefault()
+                }
+                if self.imageURLsArray.count == 0 {
+                    DispatchQueue.main.async {
+                        self.indicator.stopAnimating()
+                        self.indicator.hidesWhenStopped = true
+                        self.tableView.reloadData()
+                    }
                 }
             }
+            task.resume()
+        } else {
+            showAlert(withTitle: "Search fail", message: "Could not find the movies!")
         }
-        task.resume()
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

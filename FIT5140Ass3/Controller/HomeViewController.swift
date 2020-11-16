@@ -8,6 +8,10 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatabaseListener {
+    func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
+        //do something
+    }
+    
     
     var listenerType: ListenerType = .all
     
