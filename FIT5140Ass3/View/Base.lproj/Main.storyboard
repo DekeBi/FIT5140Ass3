@@ -721,6 +721,22 @@
             </objects>
             <point key="canvasLocation" x="-1817.3913043478262" y="1806.6964285714284"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XEh-CE-eB3">
+            <objects>
+                <viewController id="Hw9-gk-IHc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dTs-bN-hz5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="En3-vP-wjl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4MJ-Zu-M3O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Df7-SK-qtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2771" y="2588"/>
+        </scene>
         <!--My Favourite-->
         <scene sceneID="jEw-iH-fh7">
             <objects>
@@ -797,9 +813,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OOu-SI-bZU"/>
                                 </constraints>
-                                <state key="normal" title="   Add to My Favorite" image="heart" catalog="system">
+                                <state key="normal" title="   Add to My Favorite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addBtn:" destination="6yp-ql-rJC" eventType="touchUpInside" id="KOG-9G-bII"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oP-wF-idi" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="300"/>
@@ -871,7 +890,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movie Detail" id="1eK-g5-gf5"/>
                     <connections>
-                        <outlet property="addBtn" destination="5Fi-Ho-fGI" id="Aaw-BL-k3v"/>
                         <outlet property="overviewLabel" destination="Agl-1O-8XF" id="n8E-v1-4bg"/>
                         <outlet property="ratingLabel" destination="h8t-Gw-sYp" id="eDd-A1-Vfl"/>
                         <outlet property="recomBtn" destination="bOo-fF-TuJ" id="PVy-kx-Xbl"/>
@@ -1011,9 +1029,6 @@
                                 <state key="normal" title="   Add to My Favorite" image="heart" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="addBtn:" destination="9Ye-Ln-tFC" eventType="touchUpInside" id="e9I-Vl-wZX"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb9-B1-4mP" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="300"/>
@@ -1090,7 +1105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV1-dD-1uQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="1807"/>
+            <point key="canvasLocation" x="-823" y="1807"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

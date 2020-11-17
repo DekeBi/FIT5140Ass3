@@ -17,10 +17,13 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var simBtn: UIButton!
     @IBOutlet weak var recomBtn: UIButton!
+    
     var newVideos = [VideoData]()
+    
+    let POST_PATH = "https://image.tmdb.org/t/p/original"
+    
     weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
@@ -98,11 +101,13 @@ class MovieDetailViewController: UIViewController {
         let title = selectedFilm?.title
         let overview = selectedFilm?.overview
         let release_data = selectedFilm?.release_date
-        let poster_path = selectedFilm?.poster_path
-        let backdrop_path = selectedFilm?.backdrop_path
+        let pp = selectedFilm?.poster_path!
+        let poster_path = POST_PATH + pp!
+        let bp = selectedFilm?.backdrop_path
+        let backdrop_path = POST_PATH + bp!
         let vote_average = selectedFilm!.vote_average!
         let voteStr = String(vote_average)
-        let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path!,backdrop_path:backdrop_path!,vote_average:voteStr)
+        let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr)
         showAlert(withTitle: "Adding Successful", message: "Already added this movie to your favorite")
     }
     

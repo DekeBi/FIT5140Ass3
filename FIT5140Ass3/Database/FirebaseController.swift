@@ -40,6 +40,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 fatalError("Firebase authentication failed")
             }
             self.setUpCinemaListener()
+            self.setUpMovieListener()
         }
         
     }
