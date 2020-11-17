@@ -108,7 +108,7 @@ class MovieDetailViewController: UIViewController {
         let vote_average = selectedFilm!.vote_average!
         let voteStr = String(vote_average)
         let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr)
-        showAlert(withTitle: "Adding Successful", message: "Already added this movie to your favorite")
+        showAlert(withTitle: "Adding Successful", message: "Added successful!")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
