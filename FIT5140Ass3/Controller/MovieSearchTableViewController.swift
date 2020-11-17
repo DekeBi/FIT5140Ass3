@@ -84,12 +84,15 @@ class MovieSearchTableViewController: UITableViewController {
                 if let films = volumeData.results {
                     self.newFilms.append(contentsOf: films)
                     for film in films {
+                        if film.poster_path != nil {
                         let imgURL = self.POST_PATH + film.poster_path!
                         //let imgURL =  film.poster_path
-                        //if imgURL != nil {
-                        self.imageURLsArray.append(imgURL)
-                        //}
-                        //self.downloadPicturesAndSaveToUserDefault(urls: imgURL)
+                        
+                            self.imageURLsArray.append(imgURL)
+                        } else {
+                            self.imageURLsArray.append("https://www.tibs.org.tw/images/default.jpg")
+                        }
+                        
                     }
                     
                 }
@@ -153,9 +156,17 @@ class MovieSearchTableViewController: UITableViewController {
         cell.releaseLabel.text = film.release_date
         cell.despLabel.text = film.overview
         let imgURL = film.poster_path
-        let imgURL2 = self.POST_PATH + film.poster_path!
+        
         if imgURL != nil {
+            let imgURL2 = self.POST_PATH + film.poster_path!
+        
             let imageData = UserDefaults.standard.data(forKey: imgURL2)
+            if imageData != nil {
+                cell.movieImg.image = UIImage(data: imageData!)
+            }
+        } else {
+            let imageDefault = "https://www.tibs.org.tw/images/default.jpg"
+            let imageData = UserDefaults.standard.data(forKey: imageDefault)
             if imageData != nil {
                 cell.movieImg.image = UIImage(data: imageData!)
             }

@@ -83,8 +83,10 @@ class MovieDetailViewController: UIViewController {
                     self.newVideos.append(contentsOf: videos)
 
                     DispatchQueue.main.async {
-                        let videoId = self.newVideos[0].key
-                        self.youtubePlayer.load(withVideoId: videoId!)
+                        if (self.newVideos.count > 0){
+                            let videoId = self.newVideos[0].key
+                            self.youtubePlayer.load(withVideoId: videoId!)
+                        }
                     }
                 }
             } catch let err {
