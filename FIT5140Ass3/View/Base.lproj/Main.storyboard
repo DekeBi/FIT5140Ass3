@@ -488,59 +488,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxz-Qn-yzL">
-                                <rect key="frame" x="33" y="113" width="154" height="45"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Most Popular">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="popularBtn:" destination="C4s-NI-wAw" eventType="touchUpInside" id="lxt-oE-dA8"/>
-                                    <segue destination="fVL-a6-jz8" kind="show" identifier="findPopSegue" id="j5v-h2-Zp3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-4O-Xha">
-                                <rect key="frame" x="33" y="187" width="154" height="45"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="NeT-TO-75v"/>
-                                </constraints>
-                                <state key="normal" title="Upcoming">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fVL-a6-jz8" kind="show" identifier="findUpSegue" id="9us-kd-fEm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-6b-zc5">
-                                <rect key="frame" x="229" y="113" width="154" height="45"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="0MR-dA-as8"/>
-                                    <constraint firstAttribute="height" constant="45" id="v85-xB-jBs"/>
-                                </constraints>
-                                <state key="normal" title="Top Rating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fVL-a6-jz8" kind="show" identifier="findTopSegue" id="L3s-KX-QlU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qML-7u-P5b">
-                                <rect key="frame" x="229" y="187" width="154" height="45"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ewB-EZ-Bhm"/>
-                                </constraints>
-                                <state key="normal" title="Latest Movies">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fVL-a6-jz8" kind="show" identifier="findLastestSegue" id="2Qp-RT-gKb"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-It-mvF">
-                                <rect key="frame" x="20" y="306" width="374" height="34"/>
+                                <rect key="frame" x="20" y="136" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2De-uh-n6n">
                                         <rect key="frame" x="0.0" y="0.0" width="101.5" height="34"/>
@@ -556,7 +505,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-iC-R5n">
-                                <rect key="frame" x="20" y="411" width="374" height="34"/>
+                                <rect key="frame" x="20" y="210.5" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Year: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-RF-TcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="34"/>
@@ -565,57 +514,128 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-2j-xFg">
-                                        <rect key="frame" x="127.5" y="0.0" width="246.5" height="34"/>
+                                        <rect key="frame" x="127.5" y="0.0" width="192.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08p-c3-SxO">
+                                        <rect key="frame" x="340" y="0.0" width="34" height="34"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="pWe-4e-uj6"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchBtn:" destination="C4s-NI-wAw" eventType="touchUpInside" id="QCK-Dq-ON6"/>
+                                            <segue destination="fVL-a6-jz8" kind="show" identifier="searchSegue" id="Stz-D1-LVZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08p-c3-SxO">
-                                <rect key="frame" x="20" y="465" width="374" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchBtn:" destination="C4s-NI-wAw" eventType="touchUpInside" id="QCK-Dq-ON6"/>
-                                    <segue destination="fVL-a6-jz8" kind="show" identifier="searchSegue" id="Stz-D1-LVZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="errorMessage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYB-hA-fxl">
-                                <rect key="frame" x="20" y="360" width="374" height="31"/>
+                                <rect key="frame" x="20" y="180" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="RedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOVERY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHZ-tb-gUs">
+                                <rect key="frame" x="20" y="264.5" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-RN-xRJ">
+                                <rect key="frame" x="20" y="320.5" width="370" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxz-Qn-yzL">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="gG7-9R-xCy"/>
+                                            <constraint firstAttribute="height" constant="200" id="kmc-r7-AZO"/>
+                                        </constraints>
+                                        <state key="normal" image="pop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="popularBtn:" destination="C4s-NI-wAw" eventType="touchUpInside" id="lxt-oE-dA8"/>
+                                            <segue destination="fVL-a6-jz8" kind="show" identifier="findPopSegue" id="j5v-h2-Zp3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-6b-zc5">
+                                        <rect key="frame" x="190" y="0.0" width="180" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Xn5-sA-DAD"/>
+                                            <constraint firstAttribute="width" constant="180" id="jhq-wJ-bvf"/>
+                                        </constraints>
+                                        <state key="normal" image="top2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fVL-a6-jz8" kind="show" identifier="findTopSegue" id="L3s-KX-QlU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h7m-b5-pPd">
+                                <rect key="frame" x="20" y="540.5" width="374" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-4O-Xha">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="SgF-69-HPb"/>
+                                            <constraint firstAttribute="width" constant="180" id="tww-00-iHH"/>
+                                        </constraints>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <state key="normal" image="up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fVL-a6-jz8" kind="show" identifier="findUpSegue" id="9us-kd-fEm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qML-7u-P5b">
+                                        <rect key="frame" x="190" y="0.0" width="184" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Bua-MX-x22"/>
+                                            <constraint firstAttribute="height" constant="200" id="g8f-MV-fLX"/>
+                                        </constraints>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <state key="normal" title="Latest Movies" image="lat">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fVL-a6-jz8" kind="show" identifier="findLastestSegue" id="2Qp-RT-gKb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.42367519399999998" green="0.30386479109999998" blue="0.41630671940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="p4e-6b-zc5" firstAttribute="leading" secondItem="Vxz-Qn-yzL" secondAttribute="trailing" constant="42" id="8E9-4h-47d"/>
-                            <constraint firstItem="p4e-6b-zc5" firstAttribute="top" secondItem="Vxz-Qn-yzL" secondAttribute="top" id="Adf-Tp-LNz"/>
-                            <constraint firstItem="NYB-hA-fxl" firstAttribute="top" secondItem="Wwd-It-mvF" secondAttribute="bottom" constant="20" id="B9k-vF-THS"/>
-                            <constraint firstItem="p4e-6b-zc5" firstAttribute="leading" secondItem="qML-7u-P5b" secondAttribute="leading" id="D8l-gk-v4T"/>
-                            <constraint firstItem="p4e-6b-zc5" firstAttribute="trailing" secondItem="qML-7u-P5b" secondAttribute="trailing" id="F5s-qh-iIM"/>
-                            <constraint firstItem="08p-c3-SxO" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="IkV-uj-kqg"/>
-                            <constraint firstItem="DTh-iC-R5n" firstAttribute="top" secondItem="Wwd-It-mvF" secondAttribute="bottom" constant="71" id="Kko-GA-KXo"/>
-                            <constraint firstItem="08p-c3-SxO" firstAttribute="top" secondItem="DTh-iC-R5n" secondAttribute="bottom" constant="20" id="LQt-5g-q0S"/>
-                            <constraint firstItem="DTh-iC-R5n" firstAttribute="top" secondItem="NYB-hA-fxl" secondAttribute="bottom" constant="20" id="NJY-qb-wy1"/>
-                            <constraint firstItem="NYB-hA-fxl" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="U1h-l0-PrR"/>
-                            <constraint firstItem="qML-7u-P5b" firstAttribute="top" secondItem="p4e-6b-zc5" secondAttribute="bottom" constant="29" id="Wmv-a6-7gn"/>
-                            <constraint firstItem="Wwd-It-mvF" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="dDq-qY-Op8"/>
-                            <constraint firstItem="qML-7u-P5b" firstAttribute="leading" secondItem="oFj-4O-Xha" secondAttribute="trailing" constant="42" id="dOK-Ok-mle"/>
-                            <constraint firstItem="Vxz-Qn-yzL" firstAttribute="top" secondItem="UVh-Ea-WNk" secondAttribute="top" constant="25" id="hrr-8L-QNE"/>
-                            <constraint firstItem="oFj-4O-Xha" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="33" id="iiJ-Ld-c28"/>
-                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="p4e-6b-zc5" secondAttribute="trailing" constant="31" id="jjI-AT-HQY"/>
-                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="08p-c3-SxO" secondAttribute="trailing" constant="20" id="luJ-f9-Zsp"/>
-                            <constraint firstItem="oFj-4O-Xha" firstAttribute="top" secondItem="Vxz-Qn-yzL" secondAttribute="bottom" constant="29" id="luW-jH-12G"/>
-                            <constraint firstItem="Wwd-It-mvF" firstAttribute="top" secondItem="oFj-4O-Xha" secondAttribute="bottom" constant="74" id="m0k-pE-fmV"/>
-                            <constraint firstItem="Vxz-Qn-yzL" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="33" id="odo-YW-vuS"/>
-                            <constraint firstItem="p4e-6b-zc5" firstAttribute="baseline" secondItem="Vxz-Qn-yzL" secondAttribute="firstBaseline" id="qJX-oJ-ar3"/>
-                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="NYB-hA-fxl" secondAttribute="trailing" constant="20" id="qrL-Cz-geX"/>
-                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="DTh-iC-R5n" secondAttribute="trailing" constant="20" id="tKq-wc-RNO"/>
-                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="Wwd-It-mvF" secondAttribute="trailing" constant="20" id="uPd-yj-p0p"/>
-                            <constraint firstItem="DTh-iC-R5n" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="yAo-hh-tp4"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="DTh-iC-R5n" secondAttribute="trailing" constant="20" id="018-d5-zFi"/>
+                            <constraint firstItem="h7m-b5-pPd" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="4ql-7I-rv1"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="h7m-b5-pPd" secondAttribute="trailing" constant="20" id="6QI-mH-bMF"/>
+                            <constraint firstItem="DTh-iC-R5n" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="8ih-eW-bux"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="NYB-hA-fxl" secondAttribute="trailing" constant="20" id="9z8-Ig-r45"/>
+                            <constraint firstItem="NYB-hA-fxl" firstAttribute="top" secondItem="Wwd-It-mvF" secondAttribute="bottom" constant="10" id="B9g-Fe-boI"/>
+                            <constraint firstItem="aKO-RN-xRJ" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="BDF-VR-lUb"/>
+                            <constraint firstItem="NYB-hA-fxl" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="Eau-5d-fue"/>
+                            <constraint firstItem="tHZ-tb-gUs" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="GyE-co-Mzw"/>
+                            <constraint firstItem="tHZ-tb-gUs" firstAttribute="top" secondItem="DTh-iC-R5n" secondAttribute="bottom" constant="20" id="IfG-C1-5A3"/>
+                            <constraint firstItem="Wwd-It-mvF" firstAttribute="top" secondItem="UVh-Ea-WNk" secondAttribute="top" constant="48" id="RWC-xc-19E"/>
+                            <constraint firstItem="aKO-RN-xRJ" firstAttribute="top" secondItem="tHZ-tb-gUs" secondAttribute="bottom" constant="20" id="V81-1g-WQC"/>
+                            <constraint firstItem="Wwd-It-mvF" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="bB6-Jg-RBq"/>
+                            <constraint firstItem="h7m-b5-pPd" firstAttribute="top" secondItem="aKO-RN-xRJ" secondAttribute="bottom" constant="20" id="grZ-lD-lQs"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="tHZ-tb-gUs" secondAttribute="trailing" constant="20" id="h89-iH-0c2"/>
+                            <constraint firstItem="DTh-iC-R5n" firstAttribute="top" secondItem="NYB-hA-fxl" secondAttribute="bottom" constant="10" id="n2c-Kj-fOc"/>
+                            <constraint firstItem="DTh-iC-R5n" firstAttribute="leading" secondItem="UVh-Ea-WNk" secondAttribute="leading" constant="20" id="okj-gh-R6w"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="Wwd-It-mvF" secondAttribute="trailing" constant="20" id="t9e-Az-sH4"/>
+                            <constraint firstItem="UVh-Ea-WNk" firstAttribute="trailing" secondItem="DTh-iC-R5n" secondAttribute="trailing" constant="20" id="vml-vJ-ltp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVh-Ea-WNk"/>
                     </view>
@@ -642,7 +662,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="onx-Ea-jQJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.28346659629999998" green="0.20330554940000001" blue="0.2785366017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filmCell" id="X94-L0-nUx" customClass="MovieTableViewCell" customModule="FIT5140Ass3" customModuleProvider="target">
@@ -791,13 +812,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-Ho-fGI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-Ho-fGI">
                                 <rect key="frame" x="20" y="710.5" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.42367519397461917" green="0.30386479114970616" blue="0.41630671936230629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OOu-SI-bZU"/>
                                 </constraints>
-                                <state key="normal" title="   Add to My Favorite">
+                                <state key="normal" title="   Add to My Favorite" image="suit.heart" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1094,15 +1115,20 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="RQm-xS-tS6"/>
-        <segue reference="Stz-D1-LVZ"/>
+        <segue reference="2Qp-RT-gKb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="lat" width="313.66665649414062" height="323.33334350585938"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pop" width="313.66665649414062" height="323.33334350585938"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <image name="top2" width="313.66665649414062" height="323.33334350585938"/>
+        <image name="up" width="313.66665649414062" height="323.66665649414062"/>
         <image name="video" catalog="system" width="128" height="83"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
         <namedColor name="RedColor">
