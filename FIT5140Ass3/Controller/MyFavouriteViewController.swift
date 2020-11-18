@@ -7,10 +7,10 @@
 
 import UIKit
 
-class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, DatabaseListener {
+class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, DatabaseListener, UICollectionViewDelegateFlowLayout {
+    
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
     var movies = [Movie]()
@@ -21,16 +21,14 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 300)
+        collectionView.collectionViewLayout = layout
+        
         collectionView.dataSource = self
         collectionView.delegate = self
 
-//        let width = (self.collectionView.frame.size.width - 20) / 2
-//        let height = (self.collectionView.frame.size.height) / 3
-//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.sectionInset = UIEdgeInsets(top: 0,left: 5,bottom: 0,right: 5)
-//        layout.minimumInteritemSpacing = 5
-//        layout.itemSize = CGSize(width: width, height: height)
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,8 +46,6 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        var number = cinemas.count
-//        var count = movies.count
         return movies.count
     }
     
@@ -63,8 +59,9 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         
             let imageData = UserDefaults.standard.data(forKey: imgURL)
             if imageData != nil {
-                cell.movieImageView.image = UIImage(data: imageData!)?.reSizeImage(reSize: CGSize(width: 150, height: 220))
+                cell.movieImageView.image = UIImage(data: imageData!)
             }
+            
         } else {
             let imageDefault = "https://www.tibs.org.tw/images/default.jpg"
             let imageData = UserDefaults.standard.data(forKey: imageDefault)
@@ -112,6 +109,10 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
     
     func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 160, height: 300)
     }
 
 }
