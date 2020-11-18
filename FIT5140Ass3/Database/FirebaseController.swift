@@ -324,6 +324,11 @@ class FirebaseController: NSObject, DatabaseProtocol {
         listener.listenerType == ListenerType.all {
             listener.onFilmListChange(change: .update, filmList: filmList)
         }
+        
+        if listener.listenerType == ListenerType.movies ||
+        listener.listenerType == ListenerType.all {
+            listener.onMovieListChange(change: .update, movieList: movieList)
+        }
     }
     
     func deleteCinema(cinema: Cinema) {
