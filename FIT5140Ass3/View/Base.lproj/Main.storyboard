@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="j8M-h5-1Ka" kind="relationship" relationship="rootViewController" id="5NG-Sl-xft"/>
+                        <segue destination="j8M-h5-1Ka" kind="relationship" relationship="rootViewController" id="9Rf-I6-I8g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OP0-HL-TVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,7 +344,7 @@
             <objects>
                 <viewController storyboardIdentifier="map" id="Mb1-se-SUp" customClass="MapViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGA-A4-g1u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MfT-RI-h7A"/>
@@ -353,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7q-Mu-gKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2914" y="1807"/>
+            <point key="canvasLocation" x="-2914" y="2358"/>
         </scene>
         <!--Home-->
         <scene sceneID="TuR-Nk-30B">
@@ -368,9 +368,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="   Find Nearby Cinemas" image="location" catalog="system"/>
-                                <connections>
-                                    <segue destination="Mb1-se-SUp" kind="show" id="888-qi-xNI"/>
-                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-l9-dYA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="300"/>
@@ -481,7 +478,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCa-Ld-Xut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2914.4927536231885" y="1036.6071428571429"/>
+            <point key="canvasLocation" x="-3254" y="1042"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="4Rh-qi-6hf">
+            <objects>
+                <viewController id="Bmh-0G-OyV" customClass="HomepageViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="equ-C3-xIG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jfv-jf-qer"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="B4V-wC-tng"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrP-wo-pRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2575" y="1042"/>
         </scene>
         <!--Search Movie-->
         <scene sceneID="mhQ-a7-v9a">
@@ -812,41 +825,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jcr-hC-k3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1817.3913043478262" y="1806.6964285714284"/>
-        </scene>
-        <!--My Favourite-->
-        <scene sceneID="jEw-iH-fh7">
-            <objects>
-                <tableViewController id="S9b-X8-GvH" customClass="MyFavouriteTableViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aKf-xK-GRC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rrj-GM-aaN">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rrj-GM-aaN" id="fxv-Am-nPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="S9b-X8-GvH" id="81t-lN-rBx"/>
-                            <outlet property="delegate" destination="S9b-X8-GvH" id="s65-qH-4F6"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Favourite" id="EQn-jZ-duq">
-                        <barButtonItem key="rightBarButtonItem" title="Movie Detail" id="19l-Se-lXZ">
-                            <connections>
-                                <action selector="movieDetailButton:" destination="S9b-X8-GvH" id="qsi-ML-ffJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r1o-C4-lpT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="480" y="2283"/>
         </scene>
         <!--Movie Detail-->
         <scene sceneID="C8S-AA-4EF">

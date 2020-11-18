@@ -15,5 +15,6 @@ target 'FIT5140Ass3' do
 	pod 'GoogleMaps'
 
 	pod 'youtube-ios-player-helper'
+	pod 'CardSlider'
 
 end
