@@ -12,6 +12,7 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
     
+    @IBOutlet weak var pageView: UIPageControl!
     @IBOutlet weak var backgroudImageView: UIImage!
         @IBOutlet weak var collectionView: UICollectionView!
         
@@ -21,13 +22,24 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
         var movies = [Movie]()
         var movieImages = [UIImage]()
     
-    private var interests = Recommondation.createInterest()
+        private var interests = Recommondation.createInterest()
     
+        var timer = Timer()
+        var counter = 0
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BG"), for: .default)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             databaseController = appDelegate.databaseController
+            
+            pageView.numberOfPages = interests.count
+            pageView.currentPage = 0
+            DispatchQueue.main.async {
+                self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            }
+            
+            
             collectionView.dataSource = self
             collectionView.delegate = self
         }
@@ -38,6 +50,22 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // https://www.youtube.com/watch?v=cbeE3OQlU3c
+    @objc func changeImage() {
+        if counter < interests.count {
+            let index = IndexPath.init(item: counter, section: 0)
+            self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageView.currentPage = counter
+            counter += 1
+        } else {
+            counter = 0
+            let index = IndexPath.init(item: counter, section: 0)
+            self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+            pageView.currentPage = counter
+            counter = 1
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +114,12 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
 //            }
 //        }
         cell.interest = self.interests[indexPath.item]
+        //cell.featuredImageView.layer.cornerRadius = 30.0
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //pageView.currentPage = indexPath.row
     }
     
     override func viewWillDisappear(_ animated: Bool) {

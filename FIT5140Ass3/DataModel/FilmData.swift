@@ -38,4 +38,5 @@ class FilmData: NSObject, Decodable {
         backdrop_path = try? filmContainer.decode(String.self, forKey: .backdrop_path)
         vote_average = try? filmContainer.decode(Double.self, forKey: .vote_average)
     }
+    
 }

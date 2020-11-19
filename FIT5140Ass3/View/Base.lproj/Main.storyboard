@@ -491,6 +491,10 @@
                                                 <segue destination="fVL-a6-jz8" kind="show" identifier="findLat" id="KPR-uK-rq3"/>
                                             </connections>
                                         </button>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ttf-TV-hQM">
+                                            <rect key="frame" x="10" y="566" width="396" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </pageControl>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3xc-AE-YAb" firstAttribute="top" secondItem="4ny-BR-wPB" secondAttribute="top" constant="30" id="DBk-tN-zG7"/>
@@ -527,6 +531,7 @@
                     <connections>
                         <outlet property="backgroudImageView" destination="ncX-ox-yPy" id="cIa-3S-ik9"/>
                         <outlet property="collectionView" destination="aAl-R3-YGv" id="xOd-3M-SIH"/>
+                        <outlet property="pageView" destination="Ttf-TV-hQM" id="63t-n7-Lam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFq-jY-zBV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1341,7 +1346,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="RQm-xS-tS6"/>
-        <segue reference="j5v-h2-Zp3"/>
+        <segue reference="KPR-uK-rq3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BG" width="414" height="818"/>
