@@ -130,6 +130,7 @@ class CinemaDetailViewController: UIViewController,CLLocationManagerDelegate {
         marker.position = position
         marker.title = name
         marker.snippet = city
+      
         marker.map = mapView
         
     }

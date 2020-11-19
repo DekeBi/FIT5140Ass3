@@ -27,6 +27,7 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        self.nearbyCinemaMap.delegate = self
         
         let authorisationStatus = CLLocationManager.authorizationStatus()
         
@@ -68,7 +69,7 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     @IBAction func findNearbyCinema(_ sender: Any) {
         
         if let currentLocation = currentLocation{
-            let camera = GMSCameraPosition.camera(withLatitude:currentLocation.latitude, longitude: currentLocation.longitude, zoom: 16.0)
+            let camera = GMSCameraPosition.camera(withLatitude:currentLocation.latitude, longitude: currentLocation.longitude, zoom: 14.0)
             self.nearbyCinemaMap.camera = camera
             self.showMarker(position: self.nearbyCinemaMap.camera.target, name: "Current Location", city: "Current Location")
 //            let position = CLLocationCoordinate2D(latitude: -33.870878, longitude: 151.206224)
@@ -88,6 +89,7 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
         
     }
     
+
 
     func showMarker(position:CLLocationCoordinate2D,name:String,city:String){
         
@@ -162,4 +164,11 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
 
+}
+
+extension NearbyCinemaViewController:GMSMapViewDelegate{
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print(marker.title)
+        return true
+    }
 }
