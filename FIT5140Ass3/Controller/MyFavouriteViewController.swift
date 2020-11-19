@@ -38,6 +38,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         databaseController?.addListener(listener: self)
+        collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
