@@ -63,7 +63,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
                 cell.movieImageView.image = UIImage(data: imageData!)
             }
             
-        } else {
+        }else {
             let imageDefault = "https://www.tibs.org.tw/images/default.jpg"
             let imageData = UserDefaults.standard.data(forKey: imageDefault)
             if imageData != nil {

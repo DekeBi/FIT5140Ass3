@@ -28,6 +28,7 @@
 		86F776E32553670D008E63FC /* LatLongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776E22553670D008E63FC /* LatLongData.swift */; };
 		86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */; };
 		86F8744B255A0082000BF9E7 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F8744A255A0082000BF9E7 /* RouteData.swift */; };
+		86FE8BD12566743A00167BCD /* NearbyCinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE8BD02566743A00167BCD /* NearbyCinemaViewController.swift */; };
 		A40434B12562C4A900DD6CEA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40434B02562C4A900DD6CEA /* Movie.swift */; };
 		A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */; };
 		A422C655256576CE007B8391 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422C654256576CE007B8391 /* HomepageViewController.swift */; };
@@ -75,6 +76,7 @@
 		86F776E22553670D008E63FC /* LatLongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLongData.swift; sourceTree = "<group>"; };
 		86F87447255A004D000BF9E7 /* DirectionVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVolumeData.swift; sourceTree = "<group>"; };
 		86F8744A255A0082000BF9E7 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
+		86FE8BD02566743A00167BCD /* NearbyCinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCinemaViewController.swift; sourceTree = "<group>"; };
 		89ED3F0E4566F02F7F378884 /* Pods-FIT5140Ass3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5140Ass3.release.xcconfig"; path = "Target Support Files/Pods-FIT5140Ass3/Pods-FIT5140Ass3.release.xcconfig"; sourceTree = "<group>"; };
 		A40434B02562C4A900DD6CEA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A40CAA86255D2FFC0015A57C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				86982CF0256509DA00F5792E /* MyFavouriteCollectionViewCell.swift */,
 				86982D1A2565467500F5792E /* MyFavouriteDetailViewController.swift */,
 				A422C654256576CE007B8391 /* HomepageViewController.swift */,
+				86FE8BD02566743A00167BCD /* NearbyCinemaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */,
 				86F776D925536561008E63FC /* AddressVolumeData.swift in Sources */,
 				86F776E32553670D008E63FC /* LatLongData.swift in Sources */,
+				86FE8BD12566743A00167BCD /* NearbyCinemaViewController.swift in Sources */,
 				868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */,
 				A4ABBFEB255179FD00F3EE71 /* CinemaData.swift in Sources */,
 				A4ABBFE9255178EC00F3EE71 /* SearchCinemasTableViewController.swift in Sources */,

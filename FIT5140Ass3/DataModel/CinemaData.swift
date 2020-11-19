@@ -32,8 +32,10 @@ class CinemaData: NSObject, Decodable {
         name = try? cinemaContainer.decode(String.self, forKey: .name)
         address = try? cinemaContainer.decode(String.self, forKey: .address)
         city = try? cinemaContainer.decode(String.self, forKey: .city)
-        lat = try? cinemaContainer.decode(String.self, forKey: .lat)
-        lng = try? cinemaContainer.decode(String.self, forKey: .lng)
+        lat = try? "\(cinemaContainer.decode(Double.self, forKey: .lat))"
+        lng = try? "\(cinemaContainer.decode(Double.self, forKey: .lng))"
+        
+   
     }
 
 }

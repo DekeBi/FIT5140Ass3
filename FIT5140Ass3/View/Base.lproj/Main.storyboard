@@ -341,21 +341,43 @@
             </objects>
             <point key="canvasLocation" x="-4004.347826086957" y="1807.3660714285713"/>
         </scene>
-        <!--Map View-->
-        <scene sceneID="nhH-99-ph4">
+        <!--Nearby Cinema-->
+        <scene sceneID="jDU-Jb-SxF">
             <objects>
-                <viewController storyboardIdentifier="map" id="Mb1-se-SUp" customClass="MapViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WGA-A4-g1u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="unO-eP-Bl0" customClass="NearbyCinemaViewController" customModule="FIT5140Ass3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZEl-eL-fG4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="MfT-RI-h7A"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpc-5A-Dmk" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WmR-hy-HDG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hpc-5A-Dmk" firstAttribute="bottom" secondItem="WmR-hy-HDG" secondAttribute="bottom" id="2qy-5r-idv"/>
+                            <constraint firstItem="Hpc-5A-Dmk" firstAttribute="trailing" secondItem="WmR-hy-HDG" secondAttribute="trailing" id="Ake-lW-ZOL"/>
+                            <constraint firstItem="Hpc-5A-Dmk" firstAttribute="top" secondItem="WmR-hy-HDG" secondAttribute="top" id="ggc-qo-asW"/>
+                            <constraint firstItem="Hpc-5A-Dmk" firstAttribute="leading" secondItem="WmR-hy-HDG" secondAttribute="leading" id="qiQ-dL-6vT"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map View" id="FR6-UN-qX9"/>
+                    <navigationItem key="navigationItem" title="Nearby Cinema" id="Ku3-fD-EO7">
+                        <barButtonItem key="rightBarButtonItem" title="Search" image="magnifyingglass" catalog="system" id="HcO-r2-G5X">
+                            <connections>
+                                <action selector="findNearbyCinema:" destination="unO-eP-Bl0" id="Ggw-bU-ofP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="findButton" destination="HcO-r2-G5X" id="k3R-bV-r8c"/>
+                        <outlet property="nearbyCinemaMap" destination="Hpc-5A-Dmk" id="S8S-ly-Gn9"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7q-Mu-gKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h45-DO-3vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2914" y="2358"/>
+            <point key="canvasLocation" x="-3236.2318840579715" y="1807.3660714285713"/>
         </scene>
         <!--Home-->
         <scene sceneID="TuR-Nk-30B">
@@ -370,6 +392,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="   Find Nearby Cinemas" image="location" catalog="system"/>
+                                <connections>
+                                    <segue destination="unO-eP-Bl0" kind="show" identifier="findNearbySegue" id="R8B-JC-4EX"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-l9-dYA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="300"/>
