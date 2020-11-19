@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchFilterViewController: UIViewController {
+class SearchFilterViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var popularBtn: UIButton!
     
     @IBOutlet weak var topBtn: UIButton!
@@ -31,6 +31,8 @@ class SearchFilterViewController: UIViewController {
         super.viewDidLoad()
         errorMessageLabel.isHidden = true
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BG")!)
+        movieNameTextField.delegate = self
+        releaseYearTextField.delegate = self
     }
     
     @IBAction func popularBtn(_ sender: UIButton) {
@@ -96,4 +98,8 @@ class SearchFilterViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true
+       }
 }
