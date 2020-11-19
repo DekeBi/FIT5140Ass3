@@ -23,7 +23,7 @@ extension UIViewController {
 // https://www.jianshu.com/p/7a6ab875a283
 extension UIImage {
     /**
-     *  重设图片大小
+     *  resize image
      */
     func reSizeImage(reSize:CGSize)->UIImage {
         //UIGraphicsBeginImageContext(reSize);
@@ -33,10 +33,7 @@ extension UIImage {
         UIGraphicsEndImageContext();
         return reSizeImage;
     }
-     
-    /**
-     *  等比率缩放
-     */
+    
     func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
         return reSizeImage(reSize: reSize)
