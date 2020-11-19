@@ -71,7 +71,7 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
         if let currentLocation = currentLocation{
             let camera = GMSCameraPosition.camera(withLatitude:currentLocation.latitude, longitude: currentLocation.longitude, zoom: 14.0)
             self.nearbyCinemaMap.camera = camera
-            self.showMarker(position: self.nearbyCinemaMap.camera.target, name: "Current Location", city: "Current Location")
+            self.showMarker(position: self.nearbyCinemaMap.camera.target, name: "Current Location", information: "Current Location")
 //            let position = CLLocationCoordinate2D(latitude: -33.870878, longitude: 151.206224)
 //            self.showMarker(position: position, name: "Test", city: "Test")
             
@@ -91,12 +91,12 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     
 
 
-    func showMarker(position:CLLocationCoordinate2D,name:String,city:String){
+    func showMarker(position:CLLocationCoordinate2D,name:String,information:String){
         
         let marker = GMSMarker()
         marker.position = position
         marker.title = name
-        marker.snippet = city
+        marker.snippet = information
         marker.map = nearbyCinemaMap
         
     }
@@ -142,18 +142,28 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
             
             for cinema in cinemas{
                 
+                
                 let cinemaName = cinema.name
                 print(cinemaName)
-                let cinemaAddress = cinema.address
                 let latitude = Double(cinema.lat!)
                 let longitude = Double(cinema.lng!)
-                let position = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
                 
-                DispatchQueue.main.async {
- //                   self.tableView.reloadData()
-                    self.showMarker(position: position, name: cinemaName!, city: cinemaAddress!)
+                if let cinemaId = cinema.cinema_id,
+                   let cinemaCity = cinema.city,
+                   let cinemaAddress = cinema.address {
                     
+                    let information = "\(cinemaId),\(cinemaCity),\(cinemaAddress)"
+                    print(information)
+                    let position = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                    
+                    DispatchQueue.main.async {
+     //                   self.tableView.reloadData()
+                        self.showMarker(position: position, name: cinemaName!, information: information)
+                        
+                    }
                 }
+                   
+                
             }
 
            }
@@ -168,7 +178,36 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
 
 extension NearbyCinemaViewController:GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print(marker.title)
+        
+        if(marker.title == "Current Location"){
+            let alertController = UIAlertController(title: "You Current Location", message: "Please tap other cinema marker to go to the cinema detail", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            present(alertController,animated: true,completion: nil)
+            
+        }
+        else{
+            
+            print(marker.title)
+            let cinemaName = marker.title
+            let latitude = "\(marker.position.latitude)"
+            let longitude = "\(marker.position.longitude)"
+            print(marker.snippet)
+            if let informationArray = marker.snippet?.components(separatedBy: ","){
+                let cinemaId = informationArray[0]
+                let cinemaCity = informationArray[1]
+                let cinemaAddress = informationArray[2]
+                let cinema = Cinema(id: "AA", cinema_id: cinemaId, name: cinemaName!, address: cinemaAddress, city: cinemaCity, lat: latitude, lng: longitude)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let cinemaDetailViewController = storyboard.instantiateViewController(withIdentifier: "cinemaDetail") as! CinemaDetailViewController
+                cinemaDetailViewController.selectedCinema = cinema
+                navigationController?.pushViewController(cinemaDetailViewController, animated: true)
+                
+            }
+            
+        }
+
         return true
     }
 }
