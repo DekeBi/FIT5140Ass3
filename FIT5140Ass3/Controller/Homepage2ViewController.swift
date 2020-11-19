@@ -25,7 +25,7 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BG"), for: .default)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             databaseController = appDelegate.databaseController
             collectionView.dataSource = self

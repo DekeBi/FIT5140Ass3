@@ -13,10 +13,11 @@
         <scene sceneID="Vvt-Wx-5ZJ">
             <objects>
                 <tabBarController id="FC5-bs-K8T" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3A-6F-LOz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="BG" id="T3A-6F-LOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="MPy-tz-AtT" kind="relationship" relationship="viewControllers" id="O3Y-Cw-DhM"/>
@@ -88,7 +89,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7bE-e1-Sj6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Vyp-h6-Fvt" kind="relationship" relationship="rootViewController" id="GS0-03-DBa"/>
@@ -504,7 +507,7 @@
                                         <constraint firstItem="aAl-R3-YGv" firstAttribute="top" secondItem="4ny-BR-wPB" secondAttribute="top" constant="80" id="wd6-yk-cwU"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="systemUltraThinMaterialDark"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -543,9 +546,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="   Find Nearby Cinemas" image="location" catalog="system"/>
-                                <connections>
-                                    <segue destination="unO-eP-Bl0" kind="show" identifier="findNearbySegue" id="R8B-JC-4EX"/>
-                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-l9-dYA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="300"/>
@@ -1341,10 +1341,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="RQm-xS-tS6"/>
-        <segue reference="KPR-uK-rq3"/>
-        <segue reference="M0n-LM-26E"/>
+        <segue reference="j5v-h2-Zp3"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="BG" width="414" height="818"/>
         <image name="cover1" width="414" height="818"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>

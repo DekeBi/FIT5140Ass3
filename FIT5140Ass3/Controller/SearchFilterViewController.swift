@@ -30,6 +30,7 @@ class SearchFilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorMessageLabel.isHidden = true
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BG")!)
     }
     
     @IBAction func popularBtn(_ sender: UIButton) {
