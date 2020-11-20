@@ -29,7 +29,6 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         titleLabel.text = selectedFilm?.title
         releaseLabel.text = selectedFilm?.release_date

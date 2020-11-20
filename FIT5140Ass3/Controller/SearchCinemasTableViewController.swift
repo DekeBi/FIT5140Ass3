@@ -25,7 +25,6 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         super.viewDidLoad()
 
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg4"))
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self

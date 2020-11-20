@@ -22,7 +22,6 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg4"))
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController

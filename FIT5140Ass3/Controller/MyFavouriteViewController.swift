@@ -63,7 +63,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 160, height: 300)

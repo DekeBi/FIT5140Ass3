@@ -17,9 +17,7 @@
 		868CA14025501B9A0053E1B4 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */; };
 		868CA14325501EEA0053E1B4 /* CinemaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */; };
 		868CA1472550204C0053E1B4 /* MovieSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */; };
-		868CA14A2550228B0053E1B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA1492550228B0053E1B4 /* HomeViewController.swift */; };
 		868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */; };
-		868CA150255024990053E1B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868CA14F255024990053E1B4 /* MapViewController.swift */; };
 		86982D1B2565467500F5792E /* MyFavouriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86982D1A2565467500F5792E /* MyFavouriteDetailViewController.swift */; };
 		86F776D925536561008E63FC /* AddressVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776D825536561008E63FC /* AddressVolumeData.swift */; };
 		86F776DC255365BC008E63FC /* GeometryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F776DB255365BC008E63FC /* GeometryData.swift */; };
@@ -69,9 +67,7 @@
 		868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
 		868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTableViewController.swift; sourceTree = "<group>"; };
 		868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewController.swift; sourceTree = "<group>"; };
-		868CA1492550228B0053E1B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaDetailViewController.swift; sourceTree = "<group>"; };
-		868CA14F255024990053E1B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		86982D1A2565467500F5792E /* MyFavouriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteDetailViewController.swift; sourceTree = "<group>"; };
 		86F776D825536561008E63FC /* AddressVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVolumeData.swift; sourceTree = "<group>"; };
 		86F776DB255365BC008E63FC /* GeometryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryData.swift; sourceTree = "<group>"; };
@@ -223,8 +219,6 @@
 				868CA13F25501B9A0053E1B4 /* MyFavouriteViewController.swift */,
 				868CA14225501EEA0053E1B4 /* CinemaTableViewController.swift */,
 				868CA1462550204C0053E1B4 /* MovieSearchTableViewController.swift */,
-				868CA1492550228B0053E1B4 /* HomeViewController.swift */,
-				868CA14F255024990053E1B4 /* MapViewController.swift */,
 				868CA14C255022FD0053E1B4 /* CinemaDetailViewController.swift */,
 				A4ABBFE8255178EB00F3EE71 /* SearchCinemasTableViewController.swift */,
 				A426551E255301610074B50D /* DataCollectionViewCell.swift */,
@@ -417,13 +411,11 @@
 				A40434B12562C4A900DD6CEA /* Movie.swift in Sources */,
 				A4ABBFE1255176E000F3EE71 /* FirebaseController.swift in Sources */,
 				86F87448255A004D000BF9E7 /* DirectionVolumeData.swift in Sources */,
-				868CA150255024990053E1B4 /* MapViewController.swift in Sources */,
 				868CA14D255022FD0053E1B4 /* CinemaDetailViewController.swift in Sources */,
 				868CA14025501B9A0053E1B4 /* MyFavouriteViewController.swift in Sources */,
 				A422C655256576CE007B8391 /* HomepageViewController.swift in Sources */,
 				860B0F6A254E57FE00D427C1 /* SceneDelegate.swift in Sources */,
 				868CA1472550204C0053E1B4 /* MovieSearchTableViewController.swift in Sources */,
-				868CA14A2550228B0053E1B4 /* HomeViewController.swift in Sources */,
 				86982D1B2565467500F5792E /* MyFavouriteDetailViewController.swift in Sources */,
 				868CA13D255014DC0053E1B4 /* MovieDetailViewController.swift in Sources */,
 				A40CAA87255D2FFC0015A57C /* MovieTableViewCell.swift in Sources */,

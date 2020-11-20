@@ -32,7 +32,7 @@ class MovieSearchTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg4"))
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         
         indicator.style = UIActivityIndicatorView.Style.medium
         indicator.center = self.tableView.center
