@@ -976,7 +976,7 @@
                                     <constraint firstAttribute="height" constant="40" id="OOu-SI-bZU"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="   Add to My Favorite" image="suit.heart" catalog="system">
+                                <state key="normal" title="   Add to My Favorite" image="heart" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1057,6 +1057,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movie Detail" id="1eK-g5-gf5"/>
                     <connections>
+                        <outlet property="addBtn" destination="5Fi-Ho-fGI" id="L9z-Ku-42X"/>
                         <outlet property="overviewLabel" destination="Agl-1O-8XF" id="n8E-v1-4bg"/>
                         <outlet property="ratingLabel" destination="h8t-Gw-sYp" id="eDd-A1-Vfl"/>
                         <outlet property="recomBtn" destination="bOo-fF-TuJ" id="PVy-kx-Xbl"/>
@@ -1297,7 +1298,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mulan" width="300" height="444"/>
         <image name="pop3" width="313.66665649414062" height="323.33334350585938"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <image name="top3" width="313.66665649414062" height="323.33334350585938"/>
         <image name="up3" width="313.66665649414062" height="323.66665649414062"/>
         <image name="video" catalog="system" width="128" height="83"/>

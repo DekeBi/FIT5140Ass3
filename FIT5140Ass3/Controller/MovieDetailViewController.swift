@@ -7,24 +7,26 @@
 import youtube_ios_player_helper
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, DatabaseListener {
+    
+    var listenerType: ListenerType = .all
+    weak var databaseController: DatabaseProtocol?
 
     var selectedFilm : FilmData?
-    
+    var movies = [Movie]()
     @IBOutlet var youtubePlayer: YTPlayerView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var simBtn: UIButton!
     @IBOutlet weak var recomBtn: UIButton!
     
     var newVideos = [VideoData]()
     
     let POST_PATH = "https://image.tmdb.org/t/p/original"
-    
-    weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +44,9 @@ class MovieDetailViewController: UIViewController {
         //ratingLabel.text = "\(selectedFilm!.vote_average!)"
         ratingLabel.text = ratingText + "  " + "\(ratingText.count)/10"
         
-//        favoriteBtn.layer.cornerRadius = 5
-//        favoriteBtn.layer.borderWidth = 1
-//        favoriteBtn.layer.borderColor = UIColor.purple.cgColor
+        addBtn.layer.cornerRadius = 5
+        //addBtn.layer.borderWidth = 1
+        //addBtn.layer.borderColor = UIColor.purple.cgColor
         
         //recomBtn.layer.cornerRadius = 5
         //recomBtn.layer.borderWidth = 1
@@ -61,6 +63,17 @@ class MovieDetailViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
     }
 
     // https://www.youtube.com/watch?v=bsM1qdGAVbU
@@ -99,19 +112,36 @@ class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func addBtn(_ sender: Any) {
+        let count = movies.count
         let id = selectedFilm!.id!
         let inStr = String(id)
-        let title = selectedFilm?.title
-        let overview = selectedFilm?.overview
-        let release_data = selectedFilm?.release_date
-        let pp = selectedFilm?.poster_path!
-        let poster_path = POST_PATH + pp!
-        let bp = selectedFilm?.backdrop_path
-        let backdrop_path = POST_PATH + bp!
-        let vote_average = selectedFilm!.vote_average!
-        let voteStr = String(vote_average)
-        let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr)
-        showAlert(withTitle: "Adding Successful", message: "Added successful!")
+        var flag = true
+        for mov in movies {
+            if mov.id == inStr {
+                flag = false
+            }
+        }
+        if flag {
+            let title = selectedFilm?.title
+            let overview = selectedFilm?.overview
+            let release_data = selectedFilm?.release_date
+            let pp = selectedFilm?.poster_path!
+            let poster_path = POST_PATH + pp!
+            let bp = selectedFilm?.backdrop_path
+            let backdrop_path = POST_PATH + bp!
+            let vote_average = selectedFilm!.vote_average!
+            let voteStr = String(vote_average)
+            let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr)
+            
+            addBtn.backgroundColor = UIColor.purple
+            
+            addBtn.setTitle("Add Successful", for: UIControl.State.normal)
+            
+            showAlert(withTitle: "Add Successful", message: "Added successful!")
+        } else {
+            showAlert(withTitle: "Add Fail", message: "This movie is already on your favorite list")
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -128,6 +158,23 @@ class MovieDetailViewController: UIViewController {
             let destination = segue.destination as! MovieSearchTableViewController
             destination.searchMethod = method
         }
+        
+    }
+    
+    func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
+        
+    }
+    
+    func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
+        movies = movieList
+        
+    }
+    
+    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
+        
+    }
+    
+    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
         
     }
 }
