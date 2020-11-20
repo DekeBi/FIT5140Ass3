@@ -26,6 +26,8 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     var indicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         locationManager.delegate = self
         self.nearbyCinemaMap.delegate = self
         

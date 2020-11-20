@@ -32,6 +32,8 @@ class CinemaDetailViewController: UIViewController,CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         cinemaIdLabel.text = "\(selectedCinema!.cinema_id!)"
         cinemaNameLabel.text = selectedCinema?.name
         addressLabel.text = selectedCinema?.address

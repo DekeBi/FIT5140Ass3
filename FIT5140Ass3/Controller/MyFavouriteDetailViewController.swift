@@ -26,8 +26,9 @@ class MyFavouriteDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedMovie?.title)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
 
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         titleLabel.text = selectedMovie?.title
         releaseLabel.text = selectedMovie?.release_date
         overviewLabel.numberOfLines = 0

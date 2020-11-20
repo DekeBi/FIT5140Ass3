@@ -29,7 +29,8 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "BG"), for: .default)
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             databaseController = appDelegate.databaseController
             
@@ -76,7 +77,7 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "findLat" {
+        if segue.identifier == "findShowing" {
             let destination = segue.destination as! MovieSearchTableViewController
             destination.searchMethod = "now_playing"
         }

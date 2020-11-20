@@ -33,7 +33,6 @@ class HomepageViewController: UIViewController, DatabaseListener {
         databaseController = appDelegate.databaseController
         initMovies()
         
-        
         let cardSlider = CardSliderViewController.with(dataSource: self)
         cardSlider.title = "Welcome"
         

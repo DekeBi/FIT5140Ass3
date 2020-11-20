@@ -30,7 +30,8 @@ class SearchFilterViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorMessageLabel.isHidden = true
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BG")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         movieNameTextField.delegate = self
         releaseYearTextField.delegate = self
     }

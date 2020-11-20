@@ -9,10 +9,6 @@
 import UIKit
 
 class CinemaTableViewController: UITableViewController, DatabaseListener, UISearchResultsUpdating {
-    func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
-        // do something
-    }
-    
     
     let CELL_CINEMA = "cinemaCell"
     var allCinemas: [Cinema] = []
@@ -25,6 +21,9 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "bg4"))
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
@@ -127,6 +126,10 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     
     func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
         // do nothing
+    }
+    
+    func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
+        // do something
     }
     
 }
