@@ -112,7 +112,7 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
     }
     
     @IBAction func addBtn(_ sender: Any) {
-        let count = movies.count
+        
         let id = selectedFilm!.id!
         let inStr = String(id)
         var flag = true
@@ -135,6 +135,7 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
             
             addBtn.backgroundColor = UIColor.purple
             
+            //addBtn.setImage(systemName: "heart.fill", for: .normal)
             addBtn.setTitle("Add Successful", for: UIControl.State.normal)
             
             showAlert(withTitle: "Add Successful", message: "Added successful!")

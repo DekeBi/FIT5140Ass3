@@ -68,6 +68,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         let layout = UICollectionViewFlowLayout()
         let padding: CGFloat = 20
         let paddingH: CGFloat = 80
+        
         let collectionCellWidth = collectionView.frame.size.width - padding
         let collectionCellHeight = collectionView.frame.size.height - paddingH
         layout.itemSize = CGSize(width: collectionCellWidth/2, height: collectionCellHeight/2)

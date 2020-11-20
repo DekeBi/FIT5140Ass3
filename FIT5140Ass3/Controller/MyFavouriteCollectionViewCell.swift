@@ -37,5 +37,5 @@ class MyFavouriteCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }
