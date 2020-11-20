@@ -42,6 +42,7 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         databaseController?.addListener(listener: self)
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,6 +118,7 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.databaseController?.deleteCinema(cinema: filteredCinemas[indexPath.row])
+            tableView.reloadData()
         }
     }
     
