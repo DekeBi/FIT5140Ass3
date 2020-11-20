@@ -203,7 +203,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cinema history" id="bat-e7-IjY">
-                        <barButtonItem key="rightBarButtonItem" title="Search More" id="O6I-9G-roL">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="O6I-9G-roL">
                             <connections>
                                 <action selector="cinemaDetailButton:" destination="Wg2-VN-jck" id="8yo-wQ-sx4"/>
                                 <segue destination="1uI-ue-Jcg" kind="show" id="Npj-wq-K5T"/>
@@ -387,7 +387,7 @@
                         <viewLayoutGuide key="safeArea" id="WmR-hy-HDG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby Cinema" id="Ku3-fD-EO7">
-                        <barButtonItem key="rightBarButtonItem" title="Search" image="magnifyingglass" catalog="system" id="HcO-r2-G5X">
+                        <barButtonItem key="rightBarButtonItem" title="Search" image="location.fill" catalog="system" id="HcO-r2-G5X">
                             <connections>
                                 <action selector="findNearbyCinema:" destination="unO-eP-Bl0" id="Ggw-bU-ofP"/>
                             </connections>
