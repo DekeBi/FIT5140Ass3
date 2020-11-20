@@ -66,7 +66,10 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 160, height: 300)
+        let padding: CGFloat = 20
+        let collectionCellWidth = collectionView.frame.size.width - padding
+        let collectionCellHeight = collectionView.frame.size.height - padding
+        layout.itemSize = CGSize(width: collectionCellWidth/2, height: collectionCellHeight/2)
         collectionView.collectionViewLayout = layout
         
         collectionView.dataSource = self
@@ -217,7 +220,10 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 300)
+        let padding: CGFloat = 20
+        let collectionCellWidth = collectionView.frame.size.width - padding
+        let collectionCellHeight = collectionView.frame.size.height - padding
+        return CGSize(width: collectionCellWidth/2, height: collectionCellHeight/2)
     }
 
 }
