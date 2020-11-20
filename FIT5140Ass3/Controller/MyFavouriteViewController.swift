@@ -111,10 +111,12 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         let imgURL = movie.poster_path
         
         if imgURL != "" {
-        
+            //let size = cell.movieImageView.frame.width
+            //let sizeH = cell.movieImageView.frame.height
             let imageData = UserDefaults.standard.data(forKey: imgURL)
             if imageData != nil {
                 cell.movieImageView.image = UIImage(data: imageData!)
+                    //?.reSizeImage(reSize: CGSize(width: size, height: sizeH))
             }
             
         }else {

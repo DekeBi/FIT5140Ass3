@@ -821,6 +821,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OEJ-w6-hga" firstAttribute="width" secondItem="YJU-qT-Fe2" secondAttribute="width" id="JCT-xE-fCL"/>
                                                 <constraint firstAttribute="trailing" secondItem="OEJ-w6-hga" secondAttribute="trailing" id="Te9-5z-OjY"/>
                                                 <constraint firstItem="OEJ-w6-hga" firstAttribute="top" secondItem="YJU-qT-Fe2" secondAttribute="top" id="UDO-Mu-5C2"/>
                                                 <constraint firstAttribute="trailing" secondItem="J0P-Mc-1PZ" secondAttribute="trailing" id="UOw-Bo-tnz"/>
