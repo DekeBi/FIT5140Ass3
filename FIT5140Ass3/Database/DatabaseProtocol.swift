@@ -35,6 +35,7 @@ protocol DatabaseProtocol: AnyObject {
     //func addFilm(filmName: String) -> Film
     func addCinemaToFilm(cinema: Cinema, film: Film) -> Bool
     func deleteCinema(cinema: Cinema)
+    func deleteMyFavouriteMovie(movie:Movie)
     
     func removeListener(listener: DatabaseListener)
     

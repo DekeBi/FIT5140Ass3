@@ -13,6 +13,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirebaseController: NSObject, DatabaseProtocol {
+
+    
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var authController: Auth
@@ -334,6 +336,12 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func deleteCinema(cinema: Cinema) {
         if let cinemaID = cinema.id {
             cinemaRef?.document(cinemaID).delete()
+        }
+    }
+    
+    func deleteMyFavouriteMovie(movie: Movie) {
+        if let movieID = movie.refId{
+            movieRef?.document(movieID).delete()
         }
     }
     
