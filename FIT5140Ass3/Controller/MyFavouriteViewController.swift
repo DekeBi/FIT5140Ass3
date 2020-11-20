@@ -26,6 +26,15 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         didSet{
             switch mMode {
             case .view:
+                
+                for(key ,value) in dictionarySelectedIndecPath{
+                    if value{
+                        collectionView.deselectItem(at: key, animated: true)
+                    }
+                }
+                
+                dictionarySelectedIndecPath.removeAll()
+                
                 selectBarButton.title = "Select"
                 navigationItem.leftBarButtonItem = nil
                 collectionView.allowsMultipleSelection = false
@@ -148,6 +157,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         {
             mMode = .view
             dictionarySelectedIndecPath.removeAll()
+            
         }
     }
     

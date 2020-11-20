@@ -23,13 +23,14 @@ class MyFavouriteCollectionViewCell: UICollectionViewCell {
     override var isHighlighted: Bool{
         didSet{
             highlightIndicator?.isHidden = !isHighlighted
-            selectIndicator?.isHidden = !isSelected
+           
         }
     }
     
     override var isSelected: Bool{
         didSet{
             highlightIndicator?.isHidden = !isSelected
+            selectIndicator?.isHidden = !isSelected
         }
     }
     override func awakeFromNib() {

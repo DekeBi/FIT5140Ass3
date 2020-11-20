@@ -28,6 +28,11 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"bg4")!)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
+        
+        let camera = GMSCameraPosition.camera(withLatitude:-33.872889, longitude:151.206244, zoom: 6.0)
+            
+        self.nearbyCinemaMap.camera = camera
+        
         locationManager.delegate = self
         self.nearbyCinemaMap.delegate = self
         
