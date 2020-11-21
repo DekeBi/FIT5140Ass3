@@ -36,10 +36,12 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
                 dictionarySelectedIndecPath.removeAll()
                 
                 selectBarButton.title = "Select"
+                selectBarButton.tintColor = .white
                 navigationItem.leftBarButtonItem = nil
                 collectionView.allowsMultipleSelection = false
             case .select:
                 selectBarButton.title = "Cancel"
+                selectBarButton.tintColor = .yellow
                 navigationItem.leftBarButtonItem = deleteBarButton
                 collectionView.allowsMultipleSelection = true
             }
@@ -53,6 +55,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
     
     lazy var deleteBarButton:UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didDeleteButtonClicked(_:)))
+        barButtonItem.tintColor = .yellow
         return barButtonItem
     }()
     

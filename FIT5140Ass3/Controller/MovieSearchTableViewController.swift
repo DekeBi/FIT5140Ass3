@@ -36,6 +36,8 @@ class MovieSearchTableViewController: UITableViewController {
         indicator.style = UIActivityIndicatorView.Style.medium
         indicator.center = self.tableView.center
         
+        indicator.color = .white
+        
         self.view.addSubview(indicator)
         
         indicator.startAnimating()

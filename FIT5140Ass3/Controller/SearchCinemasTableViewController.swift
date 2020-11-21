@@ -110,17 +110,17 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         searchURLComponentrs.host = "api-gate2.movieglu.com"
         searchURLComponentrs.path = "/cinemaLiveSearch/"
             
-        let headers = ["client":"PERS_77","x-api-key":"j8WskErfCq348pPp6bNd7auiIsaE3L3d3lOHOYjA", "Authorization":"Basic UEVSU183N19YWDpXaFVuRTZpVnlQSWw=","territory":"XX","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
+        // alternate new api
+        let headers2 = ["client":"    STUD_154","x-api-key":"010t1k7dg58xPGY98RwunS659q9n7C03SBIXKXwd", "Authorization":"Basic U1RVRF8xNTQ6ZzFKa0RmY1hNb0k0","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
         
         
-        // new api credential 
-        let headers2 = ["client":"IT_0","x-api-key":"lzOlyufYrJ2puY0gIxEcy8QbS4gHCcZP6u3i6NUy", "Authorization":"Basic SVRfMDpnNmlEa3hzcE0xZlY=","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
+        let headers = ["client":"IT_0","x-api-key":"lzOlyufYrJ2puY0gIxEcy8QbS4gHCcZP6u3i6NUy", "Authorization":"Basic SVRfMDpnNmlEa3hzcE0xZlY=","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
             
         searchURLComponentrs.queryItems = [URLQueryItem(name: "n", value: "5"),URLQueryItem(name: "query", value: cinemaName)]
             
         var request = URLRequest(url: (searchURLComponentrs.url)!)
             request.httpMethod = "GET"
-            for (key, value) in headers2 {
+            for (key, value) in headers {
                 request.setValue(value, forHTTPHeaderField: key)
             }
 
@@ -133,6 +133,10 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
             if let error = error { print(error)
                 return
             }
+            
+            if (data == nil) {
+                self.showAlert(withTitle: "Search Fail", message: "There are no items that match keywords")
+            } else {
             do {
                 let decoder = JSONDecoder()
                 let volumeData = try decoder.decode(VolumeData.self, from: data!)
@@ -145,7 +149,7 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
                 }
             } catch let err {
                 print(err) }
-            }
+            }}
             task.resume()
 
     }

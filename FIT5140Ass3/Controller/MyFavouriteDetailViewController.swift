@@ -24,6 +24,8 @@ class MyFavouriteDetailViewController: UIViewController {
     
     @IBOutlet weak var ratingLabel: UILabel!
     
+    @IBOutlet weak var recomBtn: UIButton!
+    @IBOutlet weak var simBtn: UIButton!
     var newVideos = [VideoData]()
     
     override func viewDidLoad() {
@@ -48,7 +50,12 @@ class MyFavouriteDetailViewController: UIViewController {
             
         }
         
-        runtimeLabel.text = selectedMovie?.runtime ?? "120" + " mins"
+        let rt = selectedMovie?.runtime ?? "120"
+        runtimeLabel.text = rt + " mins"
+        
+        recomBtn.layer.cornerRadius = 5
+        
+        simBtn.layer.cornerRadius = 5
         
         if let movieId = (selectedMovie?.id){
             if let movieInt = Int(movieId){

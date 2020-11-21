@@ -22,7 +22,6 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
     
     var currentLocation:CLLocationCoordinate2D?
     
-    
     var indicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,18 +117,17 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
    searchURLComponentrs.host = "api-gate2.movieglu.com"
    searchURLComponentrs.path = "/cinemasNearby/"
        
-   let headers = ["client":"PERS_77","x-api-key":"j8WskErfCq348pPp6bNd7auiIsaE3L3d3lOHOYjA", "Authorization":"Basic UEVSU183N19YWDpXaFVuRTZpVnlQSWw=","territory":"XX","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
-   
-   
-   // new api credential
-   let headers2 = ["client":"IT_0","x-api-key":"lzOlyufYrJ2puY0gIxEcy8QbS4gHCcZP6u3i6NUy", "Authorization":"Basic SVRfMDpnNmlEa3hzcE0xZlY=","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-19T11:49:25.865Z"]
+   // alternate new api
+   let headers2 = ["client":"    STUD_154","x-api-key":"010t1k7dg58xPGY98RwunS659q9n7C03SBIXKXwd", "Authorization":"Basic U1RVRF8xNTQ6ZzFKa0RmY1hNb0k0","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
+        
+   let headers = ["client":"IT_0","x-api-key":"lzOlyufYrJ2puY0gIxEcy8QbS4gHCcZP6u3i6NUy", "Authorization":"Basic SVRfMDpnNmlEa3hzcE0xZlY=","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-19T11:49:25.865Z"]
        
    searchURLComponentrs.queryItems = [URLQueryItem(name: "n", value: "5")]
        
-       print(searchURLComponentrs.url)
+       //print(searchURLComponentrs.url)
    var request = URLRequest(url: (searchURLComponentrs.url)!)
        request.httpMethod = "GET"
-       for (key, value) in headers2 {
+       for (key, value) in headers {
            request.setValue(value, forHTTPHeaderField: key)
        }
 
@@ -140,7 +138,7 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
            return
        }
        do {
-            print(data)
+            //print(data)
            let decoder = JSONDecoder()
            let volumeData = try decoder.decode(VolumeData.self, from: data!)
            if let cinemas = volumeData.cinemas {
@@ -149,9 +147,8 @@ class NearbyCinemaViewController: UIViewController ,CLLocationManagerDelegate{
             
             for cinema in cinemas{
                 
-                
                 let cinemaName = cinema.name
-                print(cinemaName)
+                //print(cinemaName)
                 let latitude = Double(cinema.lat!)
                 let longitude = Double(cinema.lng!)
                 
@@ -194,11 +191,11 @@ extension NearbyCinemaViewController:GMSMapViewDelegate{
         }
         else{
             
-            print(marker.title)
+            //print(marker.title)
             let cinemaName = marker.title
             let latitude = "\(marker.position.latitude)"
             let longitude = "\(marker.position.longitude)"
-            print(marker.snippet)
+            //print(marker.snippet)
             if let informationArray = marker.snippet?.components(separatedBy: ","){
                 let cinemaId = informationArray[0]
                 let cinemaCity = informationArray[1]
