@@ -7,11 +7,13 @@
 
 import UIKit
 import youtube_ios_player_helper
+import SafariServices
 
 class MyFavouriteDetailViewController: UIViewController {
     
     var selectedMovie:Movie?
 
+    @IBOutlet weak var runtimeLabel: UILabel!
     @IBOutlet weak var playerView: YTPlayerView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -46,7 +48,7 @@ class MyFavouriteDetailViewController: UIViewController {
             
         }
         
-  
+        runtimeLabel.text = selectedMovie?.runtime ?? "120" + " mins"
         
         if let movieId = (selectedMovie?.id){
             if let movieInt = Int(movieId){
@@ -106,10 +108,15 @@ class MyFavouriteDetailViewController: UIViewController {
             movieSearchTableViewController.searchMethod = method
                 navigationController?.pushViewController(movieSearchTableViewController, animated: true)
         }
-
         
     }
     
+    @IBAction func searchMoreBtn(_ sender: Any) {
+        let imdb_id = self.selectedMovie!.imdb_id
+        let searchURL = "https://www.imdb.com/title/\(imdb_id)/"
+        let vc = SFSafariViewController(url: URL(string: searchURL)!)
+        present(vc, animated: true)
+    }
     
     @IBAction func simButton(_ sender: Any) {
         

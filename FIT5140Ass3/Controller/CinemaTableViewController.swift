@@ -121,14 +121,6 @@ class CinemaTableViewController: UITableViewController, DatabaseListener, UISear
         }
     }
     
-    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
-        // do nothing
-    }
-    
-    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
-        // do nothing
-    }
-    
     func onMovieListChange(change: DatabaseChange, movieList: [Movie]) {
         // do something
     }

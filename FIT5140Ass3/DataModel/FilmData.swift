@@ -16,6 +16,8 @@ class FilmData: NSObject, Decodable {
     var poster_path: String?
     var backdrop_path: String?
     var vote_average: Double?
+    var imdb_id: String?
+    var runtime: Int?
     
     private enum RootKeys: String, CodingKey {
 
@@ -26,6 +28,8 @@ class FilmData: NSObject, Decodable {
         case poster_path
         case backdrop_path
         case vote_average
+        case imdb_id
+        case runtime
     }
     
     required init(from decoder: Decoder) throws {
@@ -37,6 +41,8 @@ class FilmData: NSObject, Decodable {
         poster_path = try? filmContainer.decode(String.self, forKey: .poster_path)
         backdrop_path = try? filmContainer.decode(String.self, forKey: .backdrop_path)
         vote_average = try? filmContainer.decode(Double.self, forKey: .vote_average)
+        imdb_id = try? filmContainer.decode(String.self, forKey: .imdb_id)
+        runtime = try? filmContainer.decode(Int.self, forKey: .runtime)
     }
     
 }

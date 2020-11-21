@@ -138,13 +138,6 @@ class Homepage2ViewController: UIViewController, UICollectionViewDataSource,UICo
         
     }
     
-    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
-        
-    }
-    
-    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
-        
-    }
 }
 
 

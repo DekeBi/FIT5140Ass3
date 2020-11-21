@@ -5,6 +5,7 @@
 //  Created by user174132 on 11/2/20.
 //
 import youtube_ios_player_helper
+import SafariServices
 import UIKit
 
 class MovieDetailViewController: UIViewController, DatabaseListener {
@@ -20,6 +21,7 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    @IBOutlet weak var runtimeLabel: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var simBtn: UIButton!
     @IBOutlet weak var recomBtn: UIButton!
@@ -41,23 +43,22 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
         let ratingText = (0..<rating).reduce("") { (acc, _) -> String in
             return acc + "★"
         }
-        //ratingLabel.text = "\(selectedFilm!.vote_average!)"
+        
         ratingLabel.text = ratingText + "  " + "\(ratingText.count)/10"
         
         addBtn.layer.cornerRadius = 5
-        //addBtn.layer.borderWidth = 1
-        //addBtn.layer.borderColor = UIColor.purple.cgColor
         
-        //recomBtn.layer.cornerRadius = 5
-        //recomBtn.layer.borderWidth = 1
-        //recomBtn.layer.borderColor = UIColor.purple.cgColor
+        recomBtn.layer.cornerRadius = 5
         
-        //simBtn.layer.cornerRadius = 5
-        //simBtn.layer.borderWidth = 1
-        //simBtn.layer.borderColor = UIColor.purple.cgColor
+        simBtn.layer.cornerRadius = 5
         
         let movieId = selectedFilm?.id
         searchVedio(movie_id: movieId!)
+        
+        if selectedFilm?.imdb_id == nil {
+            searchImdbID(movie_id: movieId!)
+        }
+        searchImdbID(movie_id: movieId!)
         
         //db
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -131,20 +132,36 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
             let backdrop_path = POST_PATH + bp!
             let vote_average = selectedFilm!.vote_average!
             let voteStr = String(vote_average)
-            let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr)
+            let imdb_id = selectedFilm!.imdb_id!
+            let runtimeInt = selectedFilm!.runtime!
+            let runtimeStr = String(runtimeInt)
+            let _ = databaseController?.addMovie(id:inStr, title: title!, overview: overview!, release_data:release_data!,poster_path:poster_path,backdrop_path:backdrop_path,vote_average:voteStr,imdb_id: imdb_id,runtime: runtimeStr)
             
             addBtn.backgroundColor = UIColor.purple
             
-            //addBtn.setImage(systemName: "heart.fill", for: .normal)
             addBtn.setTitle("Add Successful", for: UIControl.State.normal)
+            
+            addBtn.isEnabled = false
             
             showAlert(withTitle: "Add Successful", message: "Added successful!")
         } else {
+            addBtn.backgroundColor = UIColor.purple
+            
+            addBtn.setTitle("Already in favorite", for: UIControl.State.normal)
+            
+            addBtn.isEnabled = false
+            
             showAlert(withTitle: "Add Fail", message: "This movie is already on your favorite list")
         }
         
     }
     
+    @IBAction func searchMoreBtn(_ sender: Any) {
+        let imdb_id = self.selectedFilm!.imdb_id!
+        let searchURL = "https://www.imdb.com/title/\(imdb_id)/"
+        let vc = SFSafariViewController(url: URL(string: searchURL)!)
+        present(vc, animated: true)
+    }
     
     @IBAction func recomButton(_ sender: Any) {
         
@@ -161,7 +178,6 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
     
     @IBAction func simButton(_ sender: Any) {
         
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let movieSearchTableViewController = storyboard.instantiateViewController(withIdentifier: "movieSearch") as! MovieSearchTableViewController
         
@@ -173,23 +189,6 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let mid = String(selectedFilm!.id!)
-//        let method = mid + "/recommendations"
-//        if segue.identifier == "findRecomSegue" {
-//            let destination = segue.destination as! MovieSearchTableViewController
-//            destination.searchMethod = method
-//        }
-//        
-//        if segue.identifier == "findSimilarSegue" {
-//            let mid = String(selectedFilm!.id!)
-//            let method = mid + "/similar"
-//            let destination = segue.destination as! MovieSearchTableViewController
-//            destination.searchMethod = method
-//        }
-//        
-//    }
-    
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
         
     }
@@ -199,11 +198,37 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
         
     }
     
-    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
-        
+    func searchImdbID(movie_id : Int){
+        let movieURL = "https://api.themoviedb.org/3/movie/\(movie_id)?api_key=ebaec4a7e78e4ee21f565b43fbc4e40e&append_to_response=videos,credits"
+        guard let url = URL(string: movieURL) else {return}
+
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error { print(error)
+                    return
+            }
+            
+            guard let data = data else {return}
+
+        do {
+            let film = try JSONDecoder().decode(FilmEXTRA.self, from: data)
+            self.selectedFilm?.imdb_id = film.imdb_id
+            self.selectedFilm?.runtime = film.runtime
+            let runtimeInt = film.runtime
+            let runtimeStr = String(runtimeInt)
+            DispatchQueue.main.async {
+                self.runtimeLabel.text = runtimeStr + " mins"
+            }
+            
+                
+        } catch let err {
+            print(err)
+        }
+        }
+        dataTask.resume()
     }
-    
-    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
-        
-    }
+}
+
+struct FilmEXTRA : Decodable{
+    let imdb_id: String
+    let runtime: Int
 }

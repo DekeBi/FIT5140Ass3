@@ -17,6 +17,8 @@ class Movie: NSObject, Decodable, Encodable {
     var poster_path: String
     var backdrop_path: String
     var vote_average: String
+    var imdb_id: String
+    var runtime: String
     
     override init() {
         refId = ""
@@ -27,9 +29,11 @@ class Movie: NSObject, Decodable, Encodable {
         poster_path = ""
         backdrop_path = ""
         vote_average = ""
+        imdb_id = ""
+        runtime = ""
     }
 
-    init(refId: String, id: String, title: String, overview: String, release_date: String, poster_path: String, backdrop_path: String, vote_average: String) {
+    init(refId: String, id: String, title: String, overview: String, release_date: String, poster_path: String, backdrop_path: String, vote_average: String, imdb_id: String, runtime: String) {
         self.id = id
         self.title = title
         self.overview = overview
@@ -37,5 +41,7 @@ class Movie: NSObject, Decodable, Encodable {
         self.poster_path = poster_path
         self.backdrop_path = backdrop_path
         self.vote_average = vote_average
+        self.imdb_id = imdb_id
+        self.runtime = runtime
     }
 }

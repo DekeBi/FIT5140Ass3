@@ -60,14 +60,6 @@ class HomepageViewController: UIViewController, DatabaseListener {
         
     }
     
-    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
-        
-    }
-    
-    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
-        
-    }
-   
 }
 
 extension HomepageViewController: CardSliderDataSource {

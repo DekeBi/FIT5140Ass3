@@ -33,7 +33,6 @@
 		A422C655256576CE007B8391 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422C654256576CE007B8391 /* HomepageViewController.swift */; };
 		A426551F255301610074B50D /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426551E255301610074B50D /* DataCollectionViewCell.swift */; };
 		A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4265520255309E70074B50D /* FilmTableViewCell.swift */; };
-		A42655232553110C0074B50D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42655222553110C0074B50D /* Film.swift */; };
 		A47C2734255D84130040A98E /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C2733255D84130040A98E /* VideoData.swift */; };
 		A47C2736255D854E0040A98E /* VedioVolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C2735255D854E0040A98E /* VedioVolumeData.swift */; };
 		A492A61B2552885A00530DAD /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492A61A2552885A00530DAD /* utilities.swift */; };
@@ -84,7 +83,6 @@
 		A422C654256576CE007B8391 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		A426551E255301610074B50D /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4265520255309E70074B50D /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
-		A42655222553110C0074B50D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		A47C2733255D84130040A98E /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
 		A47C2735255D854E0040A98E /* VedioVolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioVolumeData.swift; sourceTree = "<group>"; };
 		A492A61A2552885A00530DAD /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				A4ABBFE0255176E000F3EE71 /* FirebaseController.swift */,
 				A4ABBFE22551770400F3EE71 /* DatabaseProtocol.swift */,
 				A4ABBFE42551772D00F3EE71 /* Cinema.swift */,
-				A42655222553110C0074B50D /* Film.swift */,
 				A40434B02562C4A900DD6CEA /* Movie.swift */,
 				A49F0C482566ABFD00524CB3 /* Recommondation.swift */,
 			);
@@ -397,7 +394,6 @@
 				A4C9DEEB255BBF9D0009971D /* SearchFilterViewController.swift in Sources */,
 				A47C2736255D854E0040A98E /* VedioVolumeData.swift in Sources */,
 				A4ABBFF125517C2200F3EE71 /* AppDelegate.swift in Sources */,
-				A42655232553110C0074B50D /* Film.swift in Sources */,
 				A4265521255309E70074B50D /* FilmTableViewCell.swift in Sources */,
 				A49F0C452566AB3C00524CB3 /* Homepage2ViewController.swift in Sources */,
 				A4C9DEE9255B91B70009971D /* FilmData.swift in Sources */,

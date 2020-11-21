@@ -111,12 +111,11 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         let imgURL = movie.poster_path
         
         if imgURL != "" {
-            //let size = cell.movieImageView.frame.width
-            //let sizeH = cell.movieImageView.frame.height
+            let size = cell.movieImageView.frame.width
+            let sizeH = cell.movieImageView.frame.height
             let imageData = UserDefaults.standard.data(forKey: imgURL)
             if imageData != nil {
-                cell.movieImageView.image = UIImage(data: imageData!)
-                    //?.reSizeImage(reSize: CGSize(width: size, height: sizeH))
+                cell.movieImageView.image = UIImage(data: imageData!)?.reSizeImage(reSize: CGSize(width: size, height: sizeH))
             }
             
         }else {
@@ -214,15 +213,7 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         movies = movieList
         
     }
-    
-    func onFilmListChange(change: DatabaseChange, filmList: [Film]) {
-        
-    }
-    
-    func onFilmChange(change: DatabaseChange, filmCinemas: [Cinema]) {
-        
-    }
-    
+     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 20
         let paddingH: CGFloat = 80
