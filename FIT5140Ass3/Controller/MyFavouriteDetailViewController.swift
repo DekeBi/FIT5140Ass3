@@ -91,5 +91,40 @@ class MyFavouriteDetailViewController: UIViewController {
 
         task.resume()
     }
+    
+    
+    @IBAction func recomButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieSearchTableViewController = storyboard.instantiateViewController(withIdentifier: "movieSearch") as! MovieSearchTableViewController
+        
+        if let id = selectedMovie?.id{
+            
+            let mid = String(id)
+            let method = mid + "/recommendations"
+            
+            movieSearchTableViewController.searchMethod = method
+                navigationController?.pushViewController(movieSearchTableViewController, animated: true)
+        }
 
+        
+    }
+    
+    
+    @IBAction func simButton(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieSearchTableViewController = storyboard.instantiateViewController(withIdentifier: "movieSearch") as! MovieSearchTableViewController
+        if let id = selectedMovie?.id{
+            
+            let mid = String(id)
+            let method = mid + "/similar"
+            
+            movieSearchTableViewController.searchMethod = method
+                navigationController?.pushViewController(movieSearchTableViewController, animated: true)
+        }
+       
+    }
+    
 }

@@ -145,22 +145,50 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    @IBAction func recomButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieSearchTableViewController = storyboard.instantiateViewController(withIdentifier: "movieSearch") as! MovieSearchTableViewController
+        
         let mid = String(selectedFilm!.id!)
         let method = mid + "/recommendations"
-        if segue.identifier == "findRecomSegue" {
-            let destination = segue.destination as! MovieSearchTableViewController
-            destination.searchMethod = method
-        }
         
-        if segue.identifier == "findSimilarSegue" {
-            let mid = String(selectedFilm!.id!)
-            let method = mid + "/similar"
-            let destination = segue.destination as! MovieSearchTableViewController
-            destination.searchMethod = method
-        }
+        movieSearchTableViewController.searchMethod = method
+            navigationController?.pushViewController(movieSearchTableViewController, animated: true)
+    }
+    
+    
+    @IBAction func simButton(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieSearchTableViewController = storyboard.instantiateViewController(withIdentifier: "movieSearch") as! MovieSearchTableViewController
+        
+        let mid = String(selectedFilm!.id!)
+        let method = mid + "/similar"
+        
+        movieSearchTableViewController.searchMethod = method
+            navigationController?.pushViewController(movieSearchTableViewController, animated: true)
         
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let mid = String(selectedFilm!.id!)
+//        let method = mid + "/recommendations"
+//        if segue.identifier == "findRecomSegue" {
+//            let destination = segue.destination as! MovieSearchTableViewController
+//            destination.searchMethod = method
+//        }
+//        
+//        if segue.identifier == "findSimilarSegue" {
+//            let mid = String(selectedFilm!.id!)
+//            let method = mid + "/similar"
+//            let destination = segue.destination as! MovieSearchTableViewController
+//            destination.searchMethod = method
+//        }
+//        
+//    }
     
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
         
