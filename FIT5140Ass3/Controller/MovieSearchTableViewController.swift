@@ -32,7 +32,6 @@ class MovieSearchTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.backgroundView = UIImageView(image: UIImage(named: "bg4"))
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), for: .default)
         
         indicator.style = UIActivityIndicatorView.Style.medium
         indicator.center = self.tableView.center
@@ -80,29 +79,34 @@ class MovieSearchTableViewController: UITableViewController {
             if let error = error { print(error)
                 return
             }
-            do {
-                let decoder = JSONDecoder()
-                //print(data!)
-                let volumeData = try decoder.decode(VolumeData.self, from: data!)
-                if let films = volumeData.results {
-                    self.newFilms.append(contentsOf: films)
-                    for film in films {
-                        if film.poster_path != nil {
-                        let imgURL = self.POST_PATH + film.poster_path!
-                        //let imgURL =  film.poster_path
-                        
-                            self.imageURLsArray.append(imgURL)
-                        } else {
-                            self.imageURLsArray.append("https://www.tibs.org.tw/images/default.jpg")
+            if (data == nil) {
+                self.showAlert(withTitle: "Search Fail", message: "There are no items that match keywords")
+            } else {
+                do {
+                    let decoder = JSONDecoder()
+                    //print(data!)
+                    let volumeData = try decoder.decode(VolumeData.self, from: data!)
+                    if let films = volumeData.results {
+                        self.newFilms.append(contentsOf: films)
+                        for film in films {
+                            if film.poster_path != nil {
+                            let imgURL = self.POST_PATH + film.poster_path!
+                            //let imgURL =  film.poster_path
+                            
+                                self.imageURLsArray.append(imgURL)
+                            } else {
+                                self.imageURLsArray.append("https://www.tibs.org.tw/images/default.jpg")
+                            }
+                            
                         }
                         
                     }
+                    self.downloadPicturesAndSaveToUserDefault()
                     
-                }
-                self.downloadPicturesAndSaveToUserDefault()
-                
-            } catch let err {
-                print(err) }
+                } catch let err {
+                    print(err) }
+            }
+            
         }
         dataTask?.resume()
     }
