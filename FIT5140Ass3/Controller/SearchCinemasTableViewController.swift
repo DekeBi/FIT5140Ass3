@@ -113,14 +113,13 @@ class SearchCinemasTableViewController: UITableViewController, UISearchBarDelega
         // alternate new api
         let headers2 = ["client":"    STUD_154","x-api-key":"010t1k7dg58xPGY98RwunS659q9n7C03SBIXKXwd", "Authorization":"Basic U1RVRF8xNTQ6ZzFKa0RmY1hNb0k0","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
         
-        
         let headers = ["client":"IT_0","x-api-key":"lzOlyufYrJ2puY0gIxEcy8QbS4gHCcZP6u3i6NUy", "Authorization":"Basic SVRfMDpnNmlEa3hzcE0xZlY=","territory":"AU","api-version":"v200","geolocation":GEOLOCATION,"device-datetime":"2020-11-04T07:08:05.644Z"]
             
         searchURLComponentrs.queryItems = [URLQueryItem(name: "n", value: "5"),URLQueryItem(name: "query", value: cinemaName)]
             
         var request = URLRequest(url: (searchURLComponentrs.url)!)
             request.httpMethod = "GET"
-            for (key, value) in headers {
+            for (key, value) in headers2 {
                 request.setValue(value, forHTTPHeaderField: key)
             }
 
