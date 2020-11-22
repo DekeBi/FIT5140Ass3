@@ -106,6 +106,7 @@ class MovieSearchTableViewController: UITableViewController {
                     self.downloadPicturesAndSaveToUserDefault()
                     
                 } catch let err {
+                    self.showAlert(withTitle: "Search Fail", message: "There are no items that match keywords")
                     print(err) }
             }
             
@@ -127,6 +128,8 @@ class MovieSearchTableViewController: UITableViewController {
         task.resume()
     }
     
+    
+    // https://www.youtube.com/watch?v=WQeoO7MI0Bs
     func downloadPicturesAndSaveToUserDefault(){
         if (!imageURLsArray.isEmpty) {
             let imageURLString = imageURLsArray.removeFirst()

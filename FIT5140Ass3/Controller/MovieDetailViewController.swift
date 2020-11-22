@@ -2,11 +2,12 @@
 //  MovieDetailViewController.swift
 //  FIT5140Ass3
 //
-//  Created by user174132 on 11/2/20.
+//  Created by Tiantian Lei on 11/2/20.
 //
+
+import UIKit
 import youtube_ios_player_helper
 import SafariServices
-import UIKit
 
 class MovieDetailViewController: UIViewController, DatabaseListener {
     
@@ -158,9 +159,15 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
     
     @IBAction func searchMoreBtn(_ sender: Any) {
         let imdb_id = self.selectedFilm!.imdb_id!
-        let searchURL = "https://www.imdb.com/title/\(imdb_id)/"
-        let vc = SFSafariViewController(url: URL(string: searchURL)!)
-        present(vc, animated: true)
+        if imdb_id != "" {
+            let searchURL = "https://www.imdb.com/title/\(imdb_id)/"
+            let vc = SFSafariViewController(url: URL(string: searchURL)!)
+            present(vc, animated: true)
+        } else {
+            let searchURL = "https://www.imdb.com/"
+            let vc = SFSafariViewController(url: URL(string: searchURL)!)
+            present(vc, animated: true)
+        }
     }
     
     @IBAction func recomButton(_ sender: Any) {
@@ -206,23 +213,22 @@ class MovieDetailViewController: UIViewController, DatabaseListener {
             if let error = error { print(error)
                     return
             }
-            
-            guard let data = data else {return}
-
-        do {
-            let film = try JSONDecoder().decode(FilmEXTRA.self, from: data)
-            self.selectedFilm?.imdb_id = film.imdb_id
-            self.selectedFilm?.runtime = film.runtime
-            let runtimeInt = film.runtime
-            let runtimeStr = String(runtimeInt)
-            DispatchQueue.main.async {
-                self.runtimeLabel.text = runtimeStr + " mins"
+            do {
+                let film = try JSONDecoder().decode(FilmEXTRA.self, from: data!)
+                self.selectedFilm?.imdb_id = film.imdb_id
+                self.selectedFilm?.runtime = film.runtime
+                let runtimeInt = film.runtime
+                let runtimeStr = String(runtimeInt)
+                DispatchQueue.main.async {
+                    self.runtimeLabel.text = runtimeStr + " mins"
+                }
+            } catch let err {
+                self.selectedFilm?.imdb_id = ""
+                self.selectedFilm?.runtime = 120
+                print(err)
             }
             
-                
-        } catch let err {
-            print(err)
-        }
+            
         }
         dataTask.resume()
     }
