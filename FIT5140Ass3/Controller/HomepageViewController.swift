@@ -8,6 +8,9 @@
 import UIKit
 import CardSlider
 
+
+//References:https://www.youtube.com/watch?v=Nx3qPQ_qOFM about tab bar navigation
+//important feature of tab bar navigation controller,user can use one branch of navigation without affecting other branches
 struct MovieData: CardSliderItem {
     let image: UIImage
     let rating: Int?

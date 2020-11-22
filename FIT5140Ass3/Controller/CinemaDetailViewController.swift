@@ -8,6 +8,10 @@
 import UIKit
 import GoogleMaps
 
+
+//References:https://www.youtube.com/watch?v=_mFR7C6jKpM&t=929s  About how to integrate google map in to ios application development
+//References:https://www.youtube.com/watch?v=JYjTiMli7S4  About how to draw route between start point and destination
+
 class CinemaDetailViewController: UIViewController,CLLocationManagerDelegate {
     
     var selectedCinema: Cinema?

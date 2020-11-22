@@ -7,6 +7,8 @@
 
 import UIKit
 
+//Reference:https://www.youtube.com/watch?v=Fup54OirnpI (About the Deletion of multiple items in collection view)
+
 class MyFavouriteCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var movieLabel: UILabel!

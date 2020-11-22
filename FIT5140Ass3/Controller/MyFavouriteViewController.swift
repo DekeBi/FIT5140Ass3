@@ -7,10 +7,19 @@
 
 import UIKit
 
+
+//Reference:https://www.youtube.com/watch?v=Fup54OirnpI (About the Deletion of multiple items in collection view)
+//Refernces:https://www.youtube.com/watch?v=NSryf0YJHHk (About implementation of Collection view)
+
+
 class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, DatabaseListener, UICollectionViewDelegateFlowLayout {
     
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
+    
+    //two modes of collection view:
+    //1. normal mode: can click the cell and go to cinema details
+    //2. select mode: can select multiple items and delete them together
     
     enum Mode{
         case view
@@ -188,24 +197,6 @@ class MyFavouriteViewController: UIViewController,UICollectionViewDelegate,UICol
         collectionView.reloadData()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if mMode == .view{
-//
-//            if segue.identifier == "myFavouriteSegue"{
-//
-//            if let cell = sender as? UICollectionViewCell,
-//               let indexPath = self.collectionView.indexPath(for: cell){
-//                let selectedMovie =  movies[indexPath.item]
-//                let destination = segue.destination as! MyFavouriteDetailViewController
-//                destination.selectedMovie = selectedMovie
-//
-//                }
-//            }
-//        }
-//
-//
-//    }
     
     func onCinemaListChange(change: DatabaseChange, cinemaList: [Cinema]) {
         cinemas = cinemaList
